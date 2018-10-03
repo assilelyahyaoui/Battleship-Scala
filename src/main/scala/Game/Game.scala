@@ -1,9 +1,6 @@
 package Game
-import scala.util.Random
-import scala.annotation.tailrec
 import scala.io.StdIn.readLine
 import Player._
-import Boats._
 
 
 case class GameState(
@@ -17,13 +14,24 @@ case class GameState(
 object BattleshipGame extends App {
 
   def chooseGameModePrompt() = {
-    println("Player Mode : type HH for Human-Human interaction and AH for AI human and AA for AI-AI")
+    println("Player Mode : " + "\n" +
+      " - Type HH for Human-Human interaction " + "\n"+
+      " - Type AH for AI-Human interaction  " +"\n"+
+      " - Type AA for AI-AI interaction ")
 
   }
 
   def chooseAIPrompt() = {
     println("AI mode : type 1 , 2 or 3 to define the level of your AI")
+    println("AI Mode : " + "\n" +
+      " - Type 1 for low level AI  " + "\n"+
+      " - Type 2 for medium level AI " +"\n"+
+      " - Type 3 for high level AI ")
 
+  }
+
+  def chooseNamePrompt(num : Int)  = {
+    println("Choose your name player" + num )
   }
 
 //@tailrec
@@ -53,6 +61,6 @@ object BattleshipGame extends App {
 
 
   }//mainloop
-mainLoop()
+  mainLoop()
 
   }

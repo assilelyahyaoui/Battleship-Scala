@@ -30,7 +30,19 @@ object Cell {
     * @return boolean true if inbound, false otherwise
     */
   def cellInbound(cell: Cell): Boolean = {
-    return cell.cellXCoordinate < 10 & cell.cellXCoordinate > 0 & cell.cellYCoordinate < 10 & cell.cellYCoordinate > 0
+     cell.cellXCoordinate < 10 & cell.cellXCoordinate >= 0 & cell.cellYCoordinate < 10 & cell.cellYCoordinate >= 0
+  }
+
+  def nextXCell(cell : Cell): Cell = {
+     cell.copy(_cellXCoordinate = cell.cellXCoordinate + 1 )
+  }
+
+  def nextYCell(cell : Cell): Cell = {
+    cell.copy(_cellYCoordinate = cell.cellYCoordinate + 1 )
+  }
+
+  def changeState(cell : Cell , state : Int): Cell = {
+     cell.copy(_cellState = state )
   }
 
 }

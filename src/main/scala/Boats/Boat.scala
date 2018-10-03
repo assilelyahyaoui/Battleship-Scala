@@ -15,11 +15,11 @@ import scala.annotation.tailrec
         *can position ?
   */
 
-case class Boat (private val _name : String , private val _firstCell : Cell, private val _length : Int ,
+case class Boat(private val _name : String , private val _boatCells : List[Cell], private val _length : Int ,
                  private val _direction : Int, private val _numCellLeft : Int ){
 
   def name: String = this._name
-  def firstCell : Cell = this._firstCell
+  def boatCells : List[Cell] = this._boatCells
   def length : Int = this._length
   def direction : Int = this._direction
   def numCellLeft : Int = this._numCellLeft
@@ -28,8 +28,12 @@ case class Boat (private val _name : String , private val _firstCell : Cell, pri
 
 object Boat {
 
-// create Boat
-
+  /**
+    * checks if the boat can be placed on
+    * @param boat the booat we want to position
+    * @param cell the cell the boat wants to be positioned on
+    * @return true if the boat can be placed on this cell or not, false otherwise
+    */
   def canBePositioned(boat : Boat, cell : Cell): Boolean ={
 
     val cellState = cell.cellState
@@ -38,7 +42,7 @@ object Boat {
     val boatLength = boat.length
 
 
-    if( cellInGrid){
+    if(cellInGrid){
       cellState match {
 
         case 0 => {
@@ -87,6 +91,56 @@ object Boat {
   }
 
 
+  /**
+    * find the cells on which the boat is placed
+    * have to be preceded by CanBePositioned of the Boat class
+    *
+    * @param boat boat that we want to put in the grid
+    * @return a list containing all the cells on which the boat is placed.
+    */
+
+  def findBoatCells(boat : Boat): List[Cell] ={
+
+    val boatDirection = boat.direction
+
+    if (boat.numCellLeft == 0 ){ return Nil}
+    else{
+      if (boatDirection == 1 ){
+        // finding next boat, aka boat remove
+        val nextCell = Cell.nextYCell(boat.boatCells.head)
+        val nextBoatNumCellLeft = boat.numCellLeft -1
+        val nextBoat = boat.copy(_boatCells = List(nextCell), _numCellLeft = nextBoatNumCellLeft)
+        boat.boatCells.head :: findBoatCells(nextBoat)
+      }
+      else {
+        // case boatDirection == 0
+        val nextCell = Cell.nextXCell(boat.boatCells.head)
+        val nextBoatNumCellLeft = boat.numCellLeft -1
+        val nextBoat = boat.copy(_boatCells = List(nextCell), _numCellLeft = nextBoatNumCellLeft)
+        boat.boatCells.head :: findBoatCells(nextBoat)
+      }
+
+    }
+
+  }
+
+  /**
+    * function that fills the list of cells of the boat
+    * @param boat boat that has a list of cells constituted of 1 cell, the one entered by the player
+    * @return a boat containing all its cells in boatCells
+    */
+  def fillBoatCellList(boat: Boat): Boat={
+    boat.copy(_boatCells = findBoatCells(boat))
+  }
+
+  /**
+    * Check if all the cells of the boat have been hit
+    * @param boat
+    * @return a boolean , true if hit, false otherwise
+    */
+  def boatSank(boat: Boat) : Boolean= {
+    boat.numCellLeft == 0
+  }
 
 
 }
