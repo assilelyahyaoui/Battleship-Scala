@@ -14,8 +14,8 @@ package Boats
   * @param _fleet
   * @param _numberOfBoatsLeft
   */
-case class Fleet ( private val _fleet: List[Boat], private val _numberOfBoatsLeft : Int){
-  def fleet: List[Boat] = this._fleet
+case class Fleet (private val _fleet: List[Ship], private val _numberOfBoatsLeft : Int){
+  def fleet: List[Ship] = this._fleet
   def numberOfBoatsLeft : Int = this._numberOfBoatsLeft
 
 }

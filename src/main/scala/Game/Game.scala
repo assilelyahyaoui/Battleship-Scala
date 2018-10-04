@@ -1,6 +1,9 @@
 package Game
+import Boats.Ship
+
 import scala.io.StdIn.readLine
 import Player._
+import Grid._
 
 
 case class GameState(
@@ -62,5 +65,12 @@ object BattleshipGame extends App {
 
   }//mainloop
   mainLoop()
+  println(Grid.createEmptyGrid(0))
+  def placeFleet( shipList : List[Ship], chooseAndValidateX: => Int, chooseAndValidateY: => Int,  direction: => Int): Unit ={
+
+    val currentShip = shipList.head
+
+    //afficher la grille
+  }
 
   }

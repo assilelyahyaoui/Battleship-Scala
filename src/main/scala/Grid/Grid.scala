@@ -1,5 +1,6 @@
 package Grid
 import Boats._
+//import HelpersAndConf._
 
 /**
   * class that represents the grid that the players are going to play on .
@@ -67,7 +68,7 @@ object Grid {
     * @param boat the boat we want to add to the grid
     * @return boolean . true if overlaps, false otherwise
     */
-  def boatOverlaps(grid: Grid , boat : Boat): Boolean ={
+  def boatOverlaps(grid: Grid , boat : Ship): Boolean ={
     boat.boatCells.map( cell => grid.cellsOccup.contains(cell) ).nonEmpty
   }
 
@@ -77,7 +78,7 @@ object Grid {
     * @param boat the boat that need to be added on the grid
     * @return a grid containing the new boat
     */
-  def placeBoatInGrid(grid : Grid, boat : Boat): Grid= {
+  def placeBoatInGrid(grid : Grid, boat : Ship): Grid= {
 
     val newLayout = grid.gridLayout.map(list => list.map(cell => if(boat.boatCells.contains(cell)) Cell.changeState( cell , 1)
                                                                 else cell))
@@ -85,17 +86,56 @@ object Grid {
 
   }
 
-  def createEmptyGrid(rows : Int, cols : Int): Grid = {
-      var cells = Array.ofDim[Cell](rows, cols)
+  /**
+    * creates a grid of cells usind the createColums method
+    * @param row is an index to see which row we are on
+    * @return a grid containing cells
+    */
+  def createEmptyGrid(row: Int): List[List[Cell]] = {
+     /* var cells = Array.ofDim[Cell](rows, cols)
       val cellMap = cells.map(cell => cell.map(c => ))
       val listCell = cellMap.toList
-      val cellsOccup = List()
+      val cellsOccup = List()*/
+    if (row<10){
+      createColumns(row , 0 ) :: createEmptyGrid(row+1)
+    }// if createGrid
+    else{
+      List()
+    }
+  }//createGrid
 
-      val list : List[List[Cell]] = List.fill(10)(List.fill(10)())
+  /**
+    * creates the columns of the grid of cells
+    * @param row the row of the grid we are on , the x param of the cell
+    * @param col the column of the grid we are on, the y param of the cell, index to know where to stop.
+    * @return a list of cells representing a row of the grid
+    */
 
-    
+  def createColumns(row: Int , col : Int ): List[Cell] ={
+    if (col < 10) {
+      val cell = Cell(col, row, 0)
+      cell :: createColumns(row, col+1)
+    }
+    else{
+      List()
+    }
+  }// create columns
 
-      Grid(listCell, cellsOccup)
+
+
+  /**
+    * changes a cell's state of the grid
+    * @param grid the grid that need to be changed
+    * @param x the x coordinate targeted
+    * @param y the y coordinate targeted
+    * @param state the new state we want to pass to the cell
+    * @return a new grid containing an updated cell
+    */
+
+  def changeGridCellState(grid: Grid, x: Int, y:Int, state:Int): Grid = {
+    val cell = Cell(x, y , state)
+    val gridlayout = grid.gridLayout.updated(y, grid.gridLayout(y).updated(x, cell))
+    grid.copy(_gridLayout = gridlayout)
   }
 
 

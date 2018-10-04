@@ -15,8 +15,8 @@ import scala.annotation.tailrec
         *can position ?
   */
 
-case class Boat(private val _name : String , private val _boatCells : List[Cell], private val _length : Int ,
-                 private val _direction : Int, private val _numCellLeft : Int ){
+case class Ship(private val _name : String, private val _boatCells : List[Cell], private val _length : Int,
+                private val _direction : Int, private val _numCellLeft : Int ){
 
   def name: String = this._name
   def boatCells : List[Cell] = this._boatCells
@@ -25,8 +25,15 @@ case class Boat(private val _name : String , private val _boatCells : List[Cell]
   def numCellLeft : Int = this._numCellLeft
 }
 
+case class ShipType(private val _name : String, private val _length : Int ){
 
-object Boat {
+  def name: String = this._name
+  def length : Int = this._length
+
+}
+
+
+object Ship {
 
   /**
     * checks if the boat can be placed on
@@ -34,7 +41,7 @@ object Boat {
     * @param cell the cell the boat wants to be positioned on
     * @return true if the boat can be placed on this cell or not, false otherwise
     */
-  def canBePositioned(boat : Boat, cell : Cell): Boolean ={
+  def canBePositioned(boat : Ship, cell : Cell): Boolean ={
 
     val cellState = cell.cellState
     val cellInGrid = Cell.cellInbound(cell)
@@ -99,7 +106,7 @@ object Boat {
     * @return a list containing all the cells on which the boat is placed.
     */
 
-  def findBoatCells(boat : Boat): List[Cell] ={
+  def findBoatCells(boat : Ship): List[Cell] ={
 
     val boatDirection = boat.direction
 
@@ -129,7 +136,7 @@ object Boat {
     * @param boat boat that has a list of cells constituted of 1 cell, the one entered by the player
     * @return a boat containing all its cells in boatCells
     */
-  def fillBoatCellList(boat: Boat): Boat={
+  def fillBoatCellList(boat: Ship): Ship={
     boat.copy(_boatCells = findBoatCells(boat))
   }
 
@@ -138,7 +145,7 @@ object Boat {
     * @param boat
     * @return a boolean , true if hit, false otherwise
     */
-  def boatSank(boat: Boat) : Boolean= {
+  def boatSank(boat: Ship) : Boolean= {
     boat.numCellLeft == 0
   }
 

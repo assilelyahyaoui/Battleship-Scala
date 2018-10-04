@@ -18,6 +18,11 @@ case class Cell (private val  _cellXCoordinate : Int , private val  _cellYCoordi
 
 }
 
+case class CellType( _cellState : Int){
+  def cellState : Int = this._cellState
+}
+
+
 /**
   * the class cell's companion
   */
