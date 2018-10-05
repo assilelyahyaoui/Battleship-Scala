@@ -16,13 +16,12 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
                        private val  _trackingGrid : Grid, private val _fleet : Fleet,
                        private val _isAlive : Int) extends  Player {
 
-  def playerName: String = this._playerName
 
-  def primaryGrid: Grid = this._primaryGrid
 
-  def trackingGrid: Grid = this._trackingGrid
-
-  def fleet: Fleet = this._fleet
+  override val playerName: String = _playerName
+  override val primaryGrid: Grid = _primaryGrid
+  override val trackingGrid: Grid = _trackingGrid
+  override val fleet: Fleet = _fleet
 
   def isAlive: Int = this._isAlive
 

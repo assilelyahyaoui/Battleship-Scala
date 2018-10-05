@@ -36,10 +36,13 @@ trait Player{
   val trackingGrid : Grid
   val fleet : Fleet
 
-  def copyWithPlayerName : Player
-  def copyWithPrimaryGrid : Player
-  def copyWithTrackingGrid : Player
-  def copyWithFleet : Player
+
+  def copyWithPlayerName(playerName : String) : Player
+  def copyWithPrimaryGrid(primaryGrid : Grid) : Player
+
+  def copyWithTrackingGrid(trackingGrid : Grid) : Player
+
+  def copyWithFleet(fleet: Fleet) : Player
 
   def chooseAndValidateX : Int
   def chooseAndValidateY : Int

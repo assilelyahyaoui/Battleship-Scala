@@ -42,9 +42,20 @@ object BattleshipGame extends App {
     println("It is impossible to place the boat here, please try again")
   }
 
-  def cellNotInbound() = {
+  def cellNotInboundPrompt() = {
     println("the cell chosen is not in the grid , please try again")
   }
+  def cellisHitPrompt() = {
+    println("You have hit you opponent !")
+  }
+  def cellisEmptyPrompt() = {
+    println("This cell is empty ")
+  }
+
+  def cellPreviouslyHitPrompt() = {
+    println("This cell was previously hit")
+  }
+
 
   //@tailrec
   def mainLoop(): Unit = {
@@ -71,7 +82,7 @@ object BattleshipGame extends App {
     } // gameModeInput match
 
     val grid = Grid(Grid.createEmptyGrid(0), List())
-    placeFleet(grid, Config.ShipList , )
+    //placeFleet(grid, Config.ShipList , )
   }
 
   // boat creation
@@ -139,14 +150,14 @@ object BattleshipGame extends App {
 
       val currentShip = shipList.head
       // take the cell that the player want to hit from the grid
-      if (Cell.cellInbound(Cell(chooseAndValidateX(), chooseAndValidateY(), 0))) {
+      if (Cell.cellInbound(Cell(chooseAndValidateX, chooseAndValidateY, 0))) {
 
         val cellToPlace = Grid.fetchCell(grid, chooseAndValidateX, chooseAndValidateY)
 
         // initializing the list with the created cell , which will be in the boat
         val listCells = List(cellToPlace.get)
         // create the boat
-        val ship = Ship(currentShip.name, listCells, currentShip.length, chooseDirection(), currentShip.length)
+        val ship = Ship(currentShip.name, listCells, currentShip.length, chooseDirection, currentShip.length)
         // fill the cells of the boats, here we only need the coordinates of the cells
         val shipCells = Ship.findBoatCells(ship)
         // putting the filled list in the boat
@@ -156,19 +167,18 @@ object BattleshipGame extends App {
         if (Ship.canBePositioned(grid, finalShip, cellToPlace)) {
           val grid2 = Grid.placeBoatInGrid(grid, finalShip)
           // displayGrid
-          placeFleet(grid2, shipList.tail, chooseAndValidateX(), chooseAndValidateY(), chooseDirection())
+          placeFleet(grid2, shipList.tail, chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
         }
         else {
           impossiblePlacement()
-          placeFleet(grid, shipList, chooseAndValidateX(), chooseAndValidateY(), chooseDirection())
+          placeFleet(grid, shipList, chooseAndValidateX, chooseAndValidateY, chooseDirection)
         }
 
       }
       else {
-        // cellnotInbout
-        cellNotInbound()
-        placeFleet(grid, shipList, chooseAndValidateX(), chooseAndValidateY(), chooseDirection())
+        cellNotInboundPrompt()
+        placeFleet(grid, shipList, chooseAndValidateX, chooseAndValidateY, chooseDirection)
       }
 
     } // TODO check how to do it
@@ -178,5 +188,60 @@ object BattleshipGame extends App {
   } //placeFleet
 
 
+
+  /**
+    * always the first player of the two passed in parameter hits
+    * @param player1 the player that is going to hit
+    * @param player2 that player that is going to be hit
+    * @return
+    */
+  def hit(player1: Player, player2: Player): (Player , Player) = {
+    // need to update the gamestate from the function above
+
+    // player chooses the cell he wants to hit
+    // check the state
+    // returns the state
+    // make modifications to the tracking grid and to the other player hit list
+    // dont forget to sopy the grids to the players and to the game
+
+    val x = player1.chooseAndValidateX
+    val y = player1.chooseAndValidateY
+
+
+    val state = Grid.getCellState(player2.primaryGrid, x, y)
+
+    state match {
+      case 0 => {
+        // cell empty prompt
+        cellisEmptyPrompt()
+        // put on tracking grid of player one, white peg
+        val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 3)
+        // put on primary grid of player two , white peg
+        val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 3)
+
+       // return the new players
+        ( player1.copyWithTrackingGrid(newTrackingGrid), player2.copyWithPrimaryGrid(newPrimaryGrid) )
+
+      }
+      case 1 => {
+        // cell is hit
+        cellisHitPrompt()
+        // put on tracking grid of player one, red peg
+        val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 2)
+        // put on primary grid of player two , red peg
+        val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 2)
+
+        // return the new players
+        ( player1.copyWithTrackingGrid(newTrackingGrid), player2.copyWithPrimaryGrid(newPrimaryGrid) )
+
+      }
+      case _ => {
+        // cell previously hit
+        cellPreviouslyHitPrompt()
+        (player1, player2)
+      }
+    }
+
+}
 
 }

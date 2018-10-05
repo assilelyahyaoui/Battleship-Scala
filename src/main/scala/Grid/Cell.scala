@@ -2,13 +2,7 @@ package Grid
 
 /** Class representing a cell of the grid , has coordinates and a state
   * @param cellCoordinates : represent the positions on the x and y axes of the cell (x and y ). Is of type coordinates
-  * @param state : represent the state of the cell O = empty ,  1 = there is a boat on it , 2 = has a boat that is hit
-  * @spec
-  *     - create cell
-  *     - give cell state : empty , full , hit
-  *     - change cell state
-  *
-  *  T
+  * @param state : represent the state of the cell O = empty ,  1 = there is a boat on it , 2 = shot and hit(red) , 3 = shot and missed(white)
   */
 
 case class Cell (private val  _cellXCoordinate : Int , private val  _cellYCoordinate : Int , _cellState : Int){
@@ -92,4 +86,12 @@ object Cell {
     cell.cellState == 2
   }
 
+  /**
+    * checks if the cell's state is missed
+    * @param cell the cell of which we want to check te state
+    * @return
+    */
+  def cellMissed(cell:Cell): Boolean= {
+    cell.cellState == 3
+  }
 }
