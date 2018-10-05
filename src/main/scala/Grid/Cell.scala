@@ -38,16 +38,58 @@ object Cell {
      cell.cellXCoordinate < 10 & cell.cellXCoordinate >= 0 & cell.cellYCoordinate < 10 & cell.cellYCoordinate >= 0
   }
 
+  /**
+    * gives the a cell with an incremented x coordinate
+    * @param cell which we want the coordinate of the case next to it horizontally
+    * @return the cell wanted
+    */
   def nextXCell(cell : Cell): Cell = {
      cell.copy(_cellXCoordinate = cell.cellXCoordinate + 1 )
   }
-
+  /**
+    * gives the a cell with an incremented y coordinate
+    * @param cell which we want the coordinate of the case next to it vertically
+    * @return the cell wanted
+    */
   def nextYCell(cell : Cell): Cell = {
     cell.copy(_cellYCoordinate = cell.cellYCoordinate + 1 )
   }
 
+  /**
+    * change the state of a given cell
+    * @param cell the state of which we want to change the state
+    * @param state the state we want it changed to
+    * @return a cell with a state changed
+    */
   def changeState(cell : Cell , state : Int): Cell = {
      cell.copy(_cellState = state )
+  }
+
+  /**
+    * checks if the cell's state is empty
+    * @param cell the cell of which we want to check the state
+    * @return true if empty, false otherwise
+    */
+  def cellEmpty(cell: Cell): Boolean= {
+      cell.cellState == 0
+  }
+
+  /**
+    * checks if the cell's state is occupied
+    * @param cell the cell of which we want to check the state
+    * @return true if occupied, false otherwise
+    */
+  def cellOccupied(cell: Cell): Boolean= {
+    cell.cellState == 1
+  }
+
+  /**
+    * checks if the cell's state is hit
+    * @param cell the cell of which we want to check te state
+    * @return
+    */
+  def cellHit(cell:Cell): Boolean= {
+    cell.cellState == 2
   }
 
 }

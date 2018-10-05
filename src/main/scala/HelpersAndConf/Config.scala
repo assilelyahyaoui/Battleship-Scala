@@ -1,3 +1,4 @@
+package HelpersAndConf
 import Boats._
 
 object Config {

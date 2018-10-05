@@ -92,15 +92,12 @@ object Grid {
     * @return a grid containing cells
     */
   def createEmptyGrid(row: Int): List[List[Cell]] = {
-     /* var cells = Array.ofDim[Cell](rows, cols)
-      val cellMap = cells.map(cell => cell.map(c => ))
-      val listCell = cellMap.toList
-      val cellsOccup = List()*/
+
     if (row<10){
       createColumns(row , 0 ) :: createEmptyGrid(row+1)
     }// if createGrid
     else{
-      List()
+      Nil
     }
   }//createGrid
 
@@ -117,14 +114,14 @@ object Grid {
       cell :: createColumns(row, col+1)
     }
     else{
-      List()
+      Nil
     }
   }// create columns
 
 
 
   /**
-    * changes a cell's state of the grid
+    * changes a cell's state, the cell is in the grid
     * @param grid the grid that need to be changed
     * @param x the x coordinate targeted
     * @param y the y coordinate targeted
@@ -137,6 +134,35 @@ object Grid {
     val gridlayout = grid.gridLayout.updated(y, grid.gridLayout(y).updated(x, cell))
     grid.copy(_gridLayout = gridlayout)
   }
+
+  /**
+    * delete a cell from a list of cells
+    * @param list
+    * @param cell
+    * @return
+    */
+  def deleteCellFromList(list : List[Cell], cell: Cell): List[Cell] = {
+    //TODO
+    return Nil
+  }
+
+  def getCellState(grid: Grid, x:Int, y:Int): Int ={
+    grid.gridLayout(y)(x).cellState
+  }
+
+  def fetchCell(grid: Grid, x:Int, y:Int): Option [Cell] ={
+    Some(grid.gridLayout(y)(x))
+  }
+
+
+
+  /*def displayGrid(grid: Grid)= {
+    val gridLayout = grid.gridLayout
+
+
+  }*/
+
+
 
 
 }

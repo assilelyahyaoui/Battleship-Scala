@@ -37,64 +37,79 @@ object Ship {
 
   /**
     * checks if the boat can be placed on
-    * @param boat the booat we want to position
+    * @param boat the boat we want to position
     * @param cell the cell the boat wants to be positioned on
     * @return true if the boat can be placed on this cell or not, false otherwise
     */
-  def canBePositioned(boat : Ship, cell : Cell): Boolean ={
+  def canBePositioned(grid : Grid, boat : Ship, cell : Option[Cell]): Boolean ={
 
-    val cellState = cell.cellState
-    val cellInGrid = Cell.cellInbound(cell)
     val boatDirection = boat.direction
     val boatLength = boat.length
 
+    cell match {
 
-    if(cellInGrid){
-      cellState match {
+      case Some(cell) => {
+        val cellState = cell.cellState
+       // val cellInGrid = Cell.cellInbound(cell)
+        val boatCanFit = Ship.boatCanFit(boat , cell)
 
-        case 0 => {
-          boatLength match {
+        if (boatCanFit) {
+          cellState match {
 
-            case 0 =>{
+            case 0 => {
+              boatLength match {
+
+                case x if x<=0 => {
+                  return true
+                } //boat length case 0
+
+                case _ => {
+                  val boat2 = boat.copy(_length = boat.length - 1)
+
+
+                  boatDirection match {
+
+                    case 0 => {
+                      //case horizontal
+                      val cellIncrementedX = Grid.nextXGridCell(grid.gridLayout, cell)
+                      true && canBePositioned(grid, boat2, cellIncrementedX)
+
+                    } // boatDirection case 0
+
+                    case 1 => {
+                      //case vertical
+                      //val cellIncrementedY = cell.copy(_cellYCoordinate = cell.cellYCoordinate + 1)
+                      val cellIncrementedY = Grid.nextYGridCell(grid.gridLayout, cell)
+
+                      true && canBePositioned(grid, boat2, cellIncrementedY)
+
+                    } // boatDirection case 1
+
+                    case _ => {
+                      false
+                    }
+
+                  } // boatdirection
+                } // boat length case _
+
+              } //boatlength match
+
+            } // case 0
+
+            case 1 | 2 | _ => {
               return false
-              }//boat length case 0
+            } // case 1 | 2
 
-            case _ =>{
-              val boat2 = boat.copy(_length = boat.length -1 )
-
-
-              boatDirection match {
-
-                case 0 =>{
-                  //case horizontal
-                  val cellIncrementedX = cell.copy(_cellXCoordinate = cell.cellXCoordinate +1)
-                  return true && canBePositioned(boat2 , cellIncrementedX )
-
-                } // boatDirection case 0
-
-                case 1 =>{
-                  //case vertical
-                  val cellIncrementedY = cell.copy(_cellYCoordinate = cell.cellYCoordinate +1)
-                  return true && canBePositioned(boat2 , cellIncrementedY )
-
-                } // boatDirection case 1
-
-                case _ => { return false}
-
-              }// boatdirection
-            }// boat length case _
-
-          }//boatlength match
-
-        } // case 0
-
-        case 1 | 2 | _  =>{
+          } // match
+        } // if cellInGrid
+        else {
           return false
-        }// case 1 | 2
+        }
+      }
+      case None => false
+    }// cell match
 
-      }// match
-    }// if cellInGrid
-    else {return false}
+
   }
 
 
@@ -149,5 +164,8 @@ object Ship {
     boat.numCellLeft == 0
   }
 
+  def boatCanFit(boat: Ship, cell: Cell): Boolean= {
+    (cell.cellXCoordinate +boat.length <10 )&& (cell.cellYCoordinate +boat.length <10)
+  }
 
 }
