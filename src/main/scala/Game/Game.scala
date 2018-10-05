@@ -1,6 +1,6 @@
 package Game
 
-import Boats.{Ship, ShipType}
+import Boats._
 
 import scala.io.StdIn.readLine
 import HelpersAndConf._
@@ -81,7 +81,9 @@ object BattleshipGame extends App {
       } //case _
     } // gameModeInput match
 
-    val grid = Grid(Grid.createEmptyGrid(0), List())
+
+    val grid = Grid( Grid.createEmptyGrid(0), List())
+    //val player = new HumanPlayer("p1" , )
     //placeFleet(grid, Config.ShipList , )
   }
 
@@ -144,7 +146,7 @@ object BattleshipGame extends App {
     * @param chooseAndValidateY the y coordinate of the cell we xant to place the boat on
     * @param direction          1 for vertical, 0 for horizontal
     */
-  def placeFleet(grid: Grid, shipList: List[ShipType], chooseAndValidateX: => Int, chooseAndValidateY: => Int, chooseDirection: => Int): Grid = {
+  def placeFleet(grid: Grid, shipList: List[ShipType], fleet : Fleet ,chooseAndValidateX: => Int, chooseAndValidateY: => Int, chooseDirection: => Int): (Grid , Fleet)= {
 
     if (shipList.nonEmpty) {
 
@@ -166,24 +168,27 @@ object BattleshipGame extends App {
 
         if (Ship.canBePositioned(grid, finalShip, cellToPlace)) {
           val grid2 = Grid.placeBoatInGrid(grid, finalShip)
-          // displayGrid
-          placeFleet(grid2, shipList.tail, chooseAndValidateX, chooseAndValidateY, chooseDirection)
+          // adding boat to player fleet
+          val finalBoatList = finalShip :: fleet.fleet
+          val finalFleet = fleet.copy(finalBoatList , fleet.numberOfBoatsLeft +1)
+          // displayGrid ToDo
+          placeFleet(grid2, shipList.tail, finalFleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
         }
         else {
           impossiblePlacement()
-          placeFleet(grid, shipList, chooseAndValidateX, chooseAndValidateY, chooseDirection)
+          placeFleet(grid, shipList, fleet , chooseAndValidateX, chooseAndValidateY, chooseDirection)
         }
 
       }
       else {
         cellNotInboundPrompt()
-        placeFleet(grid, shipList, chooseAndValidateX, chooseAndValidateY, chooseDirection)
+        placeFleet(grid, shipList, fleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
       }
 
     } // TODO check how to do it
     else {
-      return grid
+      return (grid , fleet)
     }
   } //placeFleet
 

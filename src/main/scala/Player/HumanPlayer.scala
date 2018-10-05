@@ -67,7 +67,7 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
   }
 
   override def chooseDirection(): Int = {
-    println("Enter the diretion of you boat ")
+    println("Enter the direction of you boat ")
     var dir = readLine.trim.toInt
     if (dir ==1 || dir == 0 ){
       return dir
