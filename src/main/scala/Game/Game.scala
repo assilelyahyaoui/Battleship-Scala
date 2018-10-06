@@ -103,11 +103,12 @@ object BattleshipGame extends App {
        // val player2 = playerSetup(2)
         // gameState = GameState(0, player1, player2)
 
-        val primGridP1 = Grid(List(List(Cell(0,0,0), Cell(1,0,0), Cell(2,0,0), Cell(3,0,0), Cell(4,0,0), Cell(5,0,0), Cell(6,0,0), Cell(7,0,0), Cell(8,0,0), Cell(9,0,0)), List(Cell(0,1,0), Cell(1,1,1), Cell(2,1,0), Cell(3,1,0), Cell(4,1,0), Cell(5,1,0), Cell(6,1,0), Cell(7,1,0), Cell(8,1,0), Cell(9,1,0)), List(Cell(0,2,0), Cell(1,2,1), Cell(2,2,1), Cell(3,2,0), Cell(4,2,0), Cell(5,2,0), Cell(6,2,0), Cell(7,2,0), Cell(8,2,0), Cell(9,2,0)), List(Cell(0,3,0), Cell(1,3,1), Cell(2,3,1), Cell(3,3,1), Cell(4,3,0), Cell(5,3,0), Cell(6,3,0), Cell(7,3,0), Cell(8,3,0), Cell(9,3,0)), List(Cell(0,4,0), Cell(1,4,1), Cell(2,4,1), Cell(3,4,1), Cell(4,4,1), Cell(5,4,0), Cell(6,4,0), Cell(7,4,0), Cell(8,4,0), Cell(9,4,0)), List(Cell(0,5,0), Cell(1,5,1), Cell(2,5,1), Cell(3,5,1), Cell(4,5,1), Cell(5,5,1), Cell(6,5,0), Cell(7,5,0), Cell(8,5,0), Cell(9,5,0)), List(Cell(0,6,0), Cell(1,6,0), Cell(2,6,0), Cell(3,6,0), Cell(4,6,1), Cell(5,6,1), Cell(6,6,0), Cell(7,6,0), Cell(8,6,0), Cell(9,6,0)), List(Cell(0,7,0), Cell(1,7,0), Cell(2,7,0), Cell(3,7,0), Cell(4,7,0), Cell(5,7,0), Cell(6,7,0), Cell(7,7,0), Cell(8,7,0), Cell(9,7,0)), List(Cell(0,8,0), Cell(1,8,0), Cell(2,8,0), Cell(3,8,0), Cell(4,8,0), Cell(5,8,0), Cell(6,8,0), Cell(7,8,0), Cell(8,8,0), Cell(9,8,0)), List(Cell(0,9,0), Cell(1,9,0), Cell(2,9,0), Cell(3,9,0), Cell(4,9,0), Cell(5,9,0), Cell(6,9,0), Cell(7,9,0), Cell(8,9,0), Cell(9,9,0))),List())
+        val primGridP1 = Grid(List(List(Cell(0,0,1), Cell(1,0,0), Cell(2,0,0), Cell(3,0,0), Cell(4,0,0), Cell(5,0,0), Cell(6,0,0), Cell(7,0,0), Cell(8,0,0), Cell(9,0,0)), List(Cell(0,1,0), Cell(1,1,1), Cell(2,1,0), Cell(3,1,0), Cell(4,1,0), Cell(5,1,0), Cell(6,1,0), Cell(7,1,0), Cell(8,1,0), Cell(9,1,0)), List(Cell(0,2,0), Cell(1,2,1), Cell(2,2,1), Cell(3,2,0), Cell(4,2,0), Cell(5,2,0), Cell(6,2,0), Cell(7,2,0), Cell(8,2,0), Cell(9,2,0)), List(Cell(0,3,0), Cell(1,3,1), Cell(2,3,1), Cell(3,3,1), Cell(4,3,0), Cell(5,3,0), Cell(6,3,0), Cell(7,3,0), Cell(8,3,0), Cell(9,3,0)), List(Cell(0,4,0), Cell(1,4,1), Cell(2,4,1), Cell(3,4,1), Cell(4,4,1), Cell(5,4,0), Cell(6,4,0), Cell(7,4,0), Cell(8,4,0), Cell(9,4,0)), List(Cell(0,5,0), Cell(1,5,1), Cell(2,5,1), Cell(3,5,1), Cell(4,5,1), Cell(5,5,1), Cell(6,5,0), Cell(7,5,0), Cell(8,5,0), Cell(9,5,0)), List(Cell(0,6,0), Cell(1,6,0), Cell(2,6,0), Cell(3,6,0), Cell(4,6,1), Cell(5,6,1), Cell(6,6,0), Cell(7,6,0), Cell(8,6,0), Cell(9,6,0)), List(Cell(0,7,0), Cell(1,7,0), Cell(2,7,0), Cell(3,7,0), Cell(4,7,0), Cell(5,7,0), Cell(6,7,0), Cell(7,7,0), Cell(8,7,0), Cell(9,7,0)), List(Cell(0,8,0), Cell(1,8,0), Cell(2,8,0), Cell(3,8,0), Cell(4,8,0), Cell(5,8,0), Cell(6,8,0), Cell(7,8,0), Cell(8,8,0), Cell(9,8,0)), List(Cell(0,9,0), Cell(1,9,0), Cell(2,9,0), Cell(3,9,0), Cell(4,9,0), Cell(5,9,0), Cell(6,9,0), Cell(7,9,0), Cell(8,9,0), Cell(9,9,0))),List())
 
-        val primGridP2 = Grid(List(List(Cell(0,0,0), Cell(1,0,0), Cell(2,0,0), Cell(3,0,0), Cell(4,0,0), Cell(5,0,0), Cell(6,0,0), Cell(7,0,0), Cell(8,0,0), Cell(9,0,0)), List(Cell(0,1,0), Cell(1,1,1), Cell(2,1,0), Cell(3,1,0), Cell(4,1,0), Cell(5,1,0), Cell(6,1,0), Cell(7,1,0), Cell(8,1,0), Cell(9,1,0)), List(Cell(0,2,0), Cell(1,2,1), Cell(2,2,1), Cell(3,2,0), Cell(4,2,0), Cell(5,2,0), Cell(6,2,0), Cell(7,2,0), Cell(8,2,0), Cell(9,2,0)), List(Cell(0,3,0), Cell(1,3,1), Cell(2,3,1), Cell(3,3,1), Cell(4,3,0), Cell(5,3,0), Cell(6,3,0), Cell(7,3,0), Cell(8,3,0), Cell(9,3,0)), List(Cell(0,4,0), Cell(1,4,1), Cell(2,4,1), Cell(3,4,1), Cell(4,4,1), Cell(5,4,0), Cell(6,4,0), Cell(7,4,0), Cell(8,4,0), Cell(9,4,0)), List(Cell(0,5,0), Cell(1,5,1), Cell(2,5,1), Cell(3,5,1), Cell(4,5,1), Cell(5,5,1), Cell(6,5,0), Cell(7,5,0), Cell(8,5,0), Cell(9,5,0)), List(Cell(0,6,0), Cell(1,6,0), Cell(2,6,0), Cell(3,6,0), Cell(4,6,1), Cell(5,6,1), Cell(6,6,0), Cell(7,6,0), Cell(8,6,0), Cell(9,6,0)), List(Cell(0,7,0), Cell(1,7,0), Cell(2,7,0), Cell(3,7,0), Cell(4,7,0), Cell(5,7,0), Cell(6,7,0), Cell(7,7,0), Cell(8,7,0), Cell(9,7,0)), List(Cell(0,8,0), Cell(1,8,0), Cell(2,8,0), Cell(3,8,0), Cell(4,8,0), Cell(5,8,0), Cell(6,8,0), Cell(7,8,0), Cell(8,8,0), Cell(9,8,0)), List(Cell(0,9,0), Cell(1,9,0), Cell(2,9,0), Cell(3,9,0), Cell(4,9,0), Cell(5,9,0), Cell(6,9,0), Cell(7,9,0), Cell(8,9,0), Cell(9,9,0))),List())
+        val primGridP2 = Grid(List(List(Cell(0,0,1), Cell(1,0,0), Cell(2,0,0), Cell(3,0,0), Cell(4,0,0), Cell(5,0,0), Cell(6,0,0), Cell(7,0,0), Cell(8,0,0), Cell(9,0,0)), List(Cell(0,1,0), Cell(1,1,1), Cell(2,1,0), Cell(3,1,0), Cell(4,1,0), Cell(5,1,0), Cell(6,1,0), Cell(7,1,0), Cell(8,1,0), Cell(9,1,0)), List(Cell(0,2,0), Cell(1,2,1), Cell(2,2,1), Cell(3,2,0), Cell(4,2,0), Cell(5,2,0), Cell(6,2,0), Cell(7,2,0), Cell(8,2,0), Cell(9,2,0)), List(Cell(0,3,0), Cell(1,3,1), Cell(2,3,1), Cell(3,3,1), Cell(4,3,0), Cell(5,3,0), Cell(6,3,0), Cell(7,3,0), Cell(8,3,0), Cell(9,3,0)), List(Cell(0,4,0), Cell(1,4,1), Cell(2,4,1), Cell(3,4,1), Cell(4,4,1), Cell(5,4,0), Cell(6,4,0), Cell(7,4,0), Cell(8,4,0), Cell(9,4,0)), List(Cell(0,5,0), Cell(1,5,1), Cell(2,5,1), Cell(3,5,1), Cell(4,5,1), Cell(5,5,1), Cell(6,5,0), Cell(7,5,0), Cell(8,5,0), Cell(9,5,0)), List(Cell(0,6,0), Cell(1,6,0), Cell(2,6,0), Cell(3,6,0), Cell(4,6,1), Cell(5,6,1), Cell(6,6,0), Cell(7,6,0), Cell(8,6,0), Cell(9,6,0)), List(Cell(0,7,0), Cell(1,7,0), Cell(2,7,0), Cell(3,7,0), Cell(4,7,0), Cell(5,7,0), Cell(6,7,0), Cell(7,7,0), Cell(8,7,0), Cell(9,7,0)), List(Cell(0,8,0), Cell(1,8,0), Cell(2,8,0), Cell(3,8,0), Cell(4,8,0), Cell(5,8,0), Cell(6,8,0), Cell(7,8,0), Cell(8,8,0), Cell(9,8,0)), List(Cell(0,9,0), Cell(1,9,0), Cell(2,9,0), Cell(3,9,0), Cell(4,9,0), Cell(5,9,0), Cell(6,9,0), Cell(7,9,0), Cell(8,9,0), Cell(9,9,0))),List())
 
         val p1 = HumanPlayer("one", primGridP1, Grid( Grid.createEmptyGrid(0), List()),Fleet(List[Ship](), 0), 1 )
+
         val p2 = HumanPlayer("two", primGridP2, Grid( Grid.createEmptyGrid(0), List()),Fleet(List[Ship](), 0), 1 )
 
         val gameState = GameState(0, p1, p2)
@@ -232,11 +233,18 @@ object BattleshipGame extends App {
         cellisEmptyPrompt()
         // put on tracking grid of player one, white peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 3)
+        println(Grid.displayGrid(newTrackingGrid))
+
+
         // put on primary grid of player two , white peg
         val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 3)
 
-       // return the new players
-        ( player1.copyWithTrackingGrid(newTrackingGrid), player2.copyWithPrimaryGrid(newPrimaryGrid) )
+
+        // return the new players
+        val p1copy = player1.copyWithTrackingGrid(newTrackingGrid)
+        val p2copy = player2.copyWithPrimaryGrid(newPrimaryGrid)
+
+        ( p1copy,  p2copy)
 
       }
       case 1 => {
@@ -244,11 +252,17 @@ object BattleshipGame extends App {
         cellisHitPrompt()
         // put on tracking grid of player one, red peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 2)
+        println(Grid.displayGrid(newTrackingGrid))
+
         // put on primary grid of player two , red peg
         val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 2)
 
+
         // return the new players
-        ( player1.copyWithTrackingGrid(newTrackingGrid), player2.copyWithPrimaryGrid(newPrimaryGrid) )
+        val p1copy = player1.copyWithTrackingGrid(newTrackingGrid)
+        val p2copy = player2.copyWithPrimaryGrid(newPrimaryGrid)
+
+        ( p1copy,  p2copy)
 
       }
       case _ => {
@@ -289,11 +303,13 @@ object BattleshipGame extends App {
     * @return the player that won
     */
   def gameLoop(gameState: GameState, turn : Int): Player ={
-    if (Grid.boatCellsLeft(gameState.player1.primaryGrid) == 0 || Grid.boatCellsLeft(gameState.player2.primaryGrid) == 0 ){
+    val d = Grid.boatCellsLeft(gameState.player1.primaryGrid)
+    val b = Grid.boatCellsLeft(gameState.player2.primaryGrid)
+    if (Grid.boatCellsLeft(gameState.player1.primaryGrid) != 0 || Grid.boatCellsLeft(gameState.player2.primaryGrid) != 0 ){
       if (turn == 1 ){
         val hitResult = hit(gameState.player1, gameState.player2)
-        gameState.copy(gameState.roundNumber+1 , hitResult._1 , hitResult._2)
-        gameLoop(gameState, 2)
+        val gs = gameState.copy(gameState.roundNumber+1 , hitResult._1 , hitResult._2)
+        gameLoop(gs, 2)
       }
       else{
         val hitResult =  hit(gameState.player2, gameState.player1)

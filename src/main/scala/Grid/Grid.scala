@@ -173,14 +173,12 @@ object Grid {
   }
 
   def boatCellsLeft(grid: Grid): Int = {
-    println("lelel")
     var num = 0 ;
     grid.gridLayout.map(line  => line.map( cell => if (cell.cellState == 1){num+=1}))
     num
   }
 
   def boatCellsHit(grid: Grid): Int = {
-    println("lelel")
     var num = 0 ;
     grid.gridLayout.map(line  => line.map( cell => if (cell.cellState == 2){num+=1}))
     num
