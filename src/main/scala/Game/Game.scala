@@ -83,27 +83,29 @@ object BattleshipGame extends App {
 
 
     val grid = Grid( Grid.createEmptyGrid(0), List())
+    val cell = Cell(1,0,0)
+    // the boat cell has to have the first cell
+    val listcases = List(cell)
+    val ship = Ship("b1",listcases, 3 , 0 , 3)
+    val shipcells = Ship.findBoatCells(ship)
+    val ship1 = ship.copy(_boatCells = shipcells)
+
+    println(grid)
+    println(shipcells)
+    println("must say tt ")
+    println(Ship.canBePositioned(grid, ship1, Option(cell)))
+    // insert in grid
+    val r = Grid.placeBoatInGrid(grid, ship1)
+    println(r)
+    println(Grid.displayGrid(r))
+    println("heya")
     //val player = new HumanPlayer("p1" , )
     //placeFleet(grid, Config.ShipList , )
   }
-
+  mainLoop()
   // boat creation
 
-  /* val grid = Grid( Grid.createEmptyGrid(0), List())
-   val cell = Cell(1,0,0)
-   // the boat cell has to have the first cell
-   val listcases = List(cell)
-   val ship = Ship("b1",listcases, 3 , 0 , 3)
-   val shipcells = Ship.findBoatCells(ship)
-   val ship1 = ship.copy(_boatCells = shipcells)
-
-   println(grid)
-   println(shipcells)
-   println("must say tt ")
-   println(Ship.canBePositioned(grid, ship1, Option(cell)))
-   // insert in grid
-   val r = Grid.placeBoatInGrid(grid, ship1)
-   println(r)
+  /*
    println("lel" )
 
 
@@ -142,6 +144,7 @@ object BattleshipGame extends App {
     *
     * @param grid               the grid on which we want to place the boats
     * @param shipList           the predefined list of ships
+    * @param fleet               putting all the added boat into a fleet to be able to save them
     * @param chooseAndValidateX the x coordinate of the cell we want to place the boat on
     * @param chooseAndValidateY the y coordinate of the cell we xant to place the boat on
     * @param direction          1 for vertical, 0 for horizontal
@@ -186,7 +189,7 @@ object BattleshipGame extends App {
         placeFleet(grid, shipList, fleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
       }
 
-    } // TODO check how to do it
+    }
     else {
       return (grid , fleet)
     }

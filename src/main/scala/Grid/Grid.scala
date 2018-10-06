@@ -156,11 +156,20 @@ object Grid {
 
 
 
-  /*def displayGrid(grid: Grid)= {
-    val gridLayout = grid.gridLayout
+  def displayGrid(grid: Grid)= {
+     grid.gridLayout.map( line => line.map(
+          cell =>
+            cell.cellState match{
+              case 0 =>  Console.BLUE_B+" "+Console.INVISIBLE
+              case 1 =>  Console.YELLOW_B+" "+Console.INVISIBLE
+              case 2 =>  Console.RED_B+" "+Console.INVISIBLE
+              case 3 =>  Console.WHITE+" "+Console.INVISIBLE
 
+            }
+      ) +"\n"
+      )
 
-  }*/
+  }
 
 
 
