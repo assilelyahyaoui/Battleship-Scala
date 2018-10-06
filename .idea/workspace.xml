@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3b98ed36-0235-45ed-b144-154a0d99ca1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Boats/Ship.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Boats/Ship.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ShipTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config$.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -13,6 +19,28 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="562">
+                    <caret line="176" column="53" selection-start-line="176" selection-start-column="53" selection-end-line="176" selection-end-column="53" />
+                    <folding>
+                      <element signature="e#14#27#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -51,14 +79,14 @@
           <entry key="class" value="2" />
           <entry key="java" value="1" />
           <entry key="sbt" value="1" />
-          <entry key="scala" value="22" />
+          <entry key="scala" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="JAVA" value="1" />
-          <entry key="Scala" value="22" />
+          <entry key="Scala" value="24" />
           <entry key="sbt" value="1" />
         </counts>
       </usages-collector>
@@ -66,13 +94,13 @@
         <counts>
           <entry key="java" value="10" />
           <entry key="sbt" value="67" />
-          <entry key="scala" value="17663" />
+          <entry key="scala" value="18482" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="10" />
-          <entry key="Scala" value="17663" />
+          <entry key="Scala" value="18482" />
           <entry key="sbt" value="67" />
         </counts>
       </usages-collector>
@@ -84,8 +112,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="341" column="1" lean-forward="true" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
+            <state relative-caret-position="150">
+              <caret line="234" column="4" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="4" />
               <folding>
                 <element signature="e#14#28#0" expanded="true" />
               </folding>
@@ -115,10 +143,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Cell.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1395">
+              <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+            <state relative-caret-position="194">
+              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -147,8 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+            <state relative-caret-position="127">
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#14#27#0" expanded="true" />
               </folding>
@@ -157,12 +194,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/ShipTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state relative-caret-position="361">
+              <caret line="73" column="32" lean-forward="true" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#1#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,6 +241,8 @@
       <find>turn</find>
       <find>PLACEF</find>
       <find>here</find>
+      <find>playerTurn</find>
+      <find>clear</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -220,12 +259,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Output.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Grid/Cell.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/Player.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Boats/Ship.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Grid/Grid.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Game/Game.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Boats/Ship.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/ShipTest.scala" />
       </list>
     </option>
   </component>
@@ -316,14 +356,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="battleship-scala" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Battleship-Scala" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="Boats" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -333,7 +365,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538833094691" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538844508658" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -342,6 +374,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="Boats" />
     </key>
   </component>
@@ -376,10 +409,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShipTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="battleship-scala" />
+      <setting name="path" value="ShipTest" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="ShipTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.BattleshipGame" />
       <item itemvalue="Scala Script.BattleshipGame" />
+      <item itemvalue="ScalaTest.ShipTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="ScalaTest.ShipTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="availableProjects">
@@ -426,6 +482,38 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ShipTest - 2018.10.06 at 18h 32m 59s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 35m 37s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 42m 28s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 44m 27s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 44m 44s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 45m 57s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 46m 34s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 46m 46s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 46m 59s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ShipTest - 2018.10.06 at 18h 47m 08s.xml">
+      <configuration name="ShipTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -439,7 +527,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -448,7 +536,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44819278" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44819278" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37349397" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -511,7 +599,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>157</line>
+          <line>167</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -541,61 +629,61 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>318</line>
+          <line>332</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>317</line>
+          <line>331</line>
           <properties />
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>315</line>
+          <line>329</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>314</line>
+          <line>328</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>313</line>
+          <line>327</line>
           <properties />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>328</line>
+          <line>342</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>330</line>
+          <line>344</line>
           <properties />
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>329</line>
+          <line>343</line>
           <properties />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>333</line>
+          <line>347</line>
           <properties />
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>332</line>
+          <line>346</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
@@ -625,23 +713,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Cell.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Output.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -695,6 +766,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Fleet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Cell.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-232">
@@ -707,32 +792,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Fleet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="194">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+        <state relative-caret-position="127">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#14#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ShipTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="73" column="32" lean-forward="true" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="341" column="1" lean-forward="true" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
+        <state relative-caret-position="150">
+          <caret line="234" column="4" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="4" />
           <folding>
             <element signature="e#14#28#0" expanded="true" />
           </folding>

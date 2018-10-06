@@ -93,6 +93,16 @@ object BattleshipGame extends App {
     println(" Here is your tracking grid")
   }
 
+  def clearScreen(): Unit = {
+    print("\033[H\033[2J")
+  }
+
+  def pressEnterToContinue() = {
+    println("Press Any Key to Continue")
+    readLine()
+  }
+
+
 
   //@tailrec
   def mainLoop(): Unit = {
@@ -222,7 +232,11 @@ object BattleshipGame extends App {
     // make modifications to the tracking grid and to the other player hit list
     // dont forget to sopy the grids to the players and to the game
 
+    ()
     playerTurn(player1.playerName)
+
+    pressEnterToContinue()
+    clearScreen()
     primaryGridPrompt()
     println(Grid.displayGrid(player1.primaryGrid))
     trackingGridPrompt()
