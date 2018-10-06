@@ -86,6 +86,12 @@ object BattleshipGame extends App {
   def gameOver(name: String): Unit ={
     println("Game Over "+ "\n"+ name+ " You Win")
   }
+  def primaryGridPrompt(): Unit ={
+    println(" Here is your primary grid")
+  }
+  def trackingGridPrompt(): Unit ={
+    println(" Here is your tracking grid")
+  }
 
 
   //@tailrec
@@ -177,11 +183,8 @@ object BattleshipGame extends App {
           // adding boat to player fleet
           val finalBoatList = finalShip :: fleet.fleet
           val finalFleet = fleet.copy(finalBoatList , fleet.numberOfBoatsLeft +1)
-          println("in place fleet")
-          println(grid2)
           println(Grid.displayGrid(grid2))
-          println("cells left ")
-          println(Grid.boatCellsLeft(grid2))
+          //println(Grid.boatCellsLeft(grid2))
           placeFleet(grid2, shipList.tail, finalFleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
         }
@@ -220,6 +223,11 @@ object BattleshipGame extends App {
     // dont forget to sopy the grids to the players and to the game
 
     playerTurn(player1.playerName)
+    primaryGridPrompt()
+    println(Grid.displayGrid(player1.primaryGrid))
+    trackingGridPrompt()
+    println(Grid.displayGrid(player1.trackingGrid))
+
 
     val x = player1.chooseAndValidateX
     val y = player1.chooseAndValidateY
@@ -320,11 +328,11 @@ object BattleshipGame extends App {
     }
     else {
       turn match {
-        case 1 => {gameOver(gameState.player1.playerName)
-                    gameState.player1}
+        case 1 => {gameOver(gameState.player2.playerName)
+                    gameState.player2}
         case 2 => {
-          gameOver(gameState.player2.playerName)
-          gameState.player2
+          gameOver(gameState.player1.playerName)
+          gameState.player1
         }
 
       }
