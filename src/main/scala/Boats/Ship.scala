@@ -59,7 +59,7 @@ object Ship {
             case 0 => {
               boatLength match {
 
-                case x if x<=0 => {
+                case x if x<=1 => {
                   return true
                 } //boat length case 0
 
@@ -71,8 +71,14 @@ object Ship {
 
                     case 0 => {
                       //case horizontal
-                      val cellIncrementedX = Grid.nextXGridCell(grid.gridLayout, cell)
-                      true && canBePositioned(grid, boat2, cellIncrementedX)
+                      if(Grid.nextXGridCell(grid.gridLayout, cell) !=  None){
+
+                        val cellIncrementedX = Grid.nextXGridCell(grid.gridLayout, cell)
+                        true && canBePositioned(grid, boat2, cellIncrementedX)
+                      }
+                      else {
+                        false
+                      }
 
                     } // boatDirection case 0
 
@@ -165,7 +171,14 @@ object Ship {
   }
 
   def boatCanFit(boat: Ship, cell: Cell): Boolean= {
-    (cell.cellXCoordinate +boat.length <10 )&& (cell.cellYCoordinate +boat.length <10)
+
+      boat.direction match {
+        case 0 => cell.cellXCoordinate +boat.length <=10
+        case 1 => cell.cellYCoordinate +boat.length <=10
+        case _ => false
+      }
+
+
   }
 
 }

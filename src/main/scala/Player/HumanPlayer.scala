@@ -17,65 +17,72 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
                        private val _isAlive : Int) extends  Player {
 
 
-
   override val playerName: String = _playerName
   override val primaryGrid: Grid = _primaryGrid
   override val trackingGrid: Grid = _trackingGrid
   override val fleet: Fleet = _fleet
 
+  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 )  }
   def isAlive: Int = this._isAlive
 
-  def copyWithPlayerName(playerName : String) : Player = this.copy(_playerName = playerName )
+  def copyWithPlayerName(playerName: String): Player = this.copy(_playerName = playerName)
 
-  def copyWithPrimaryGrid(primaryGrid : Grid) : Player = this.copy(_primaryGrid= primaryGrid )
+  def copyWithPrimaryGrid(primaryGrid: Grid): Player = this.copy(_primaryGrid = primaryGrid)
 
-  def copyWithTrackingGrid(trackingGrid : Grid) : Player = this.copy(_trackingGrid = trackingGrid )
+  def copyWithTrackingGrid(trackingGrid: Grid): Player = this.copy(_trackingGrid = trackingGrid)
 
-  def copyWithFleet(fleet: Fleet) : Player = this.copy(_fleet = fleet )
+  def copyWithFleet(fleet: Fleet): Player = this.copy(_fleet = fleet)
 
-  /* Display functions */
-  def cellNotInbound() = {
-    println("the cell chosen is not in the grid , please try again")
-  }
-  def dirIncorrect() = {
-    println("The direction chosen is inaccurate, please choose again  ")
-  }
+
+
+
+    /* Display functions */
+    def cellNotInbound() = {
+      println("the cell chosen is not in the grid , please try again")
+    }
+
+    def dirIncorrect() = {
+      println("The direction chosen is inaccurate, please choose again  ")
+    }
 
 
   override def chooseAndValidateX(): Int = {
-    println("Enter the x coordinate (must be between 0 and 9 )")
-    val x = readLine.trim.toInt
-    if(x <0 | x>9){
-      cellNotInbound()
-      chooseAndValidateX()
+      println("Enter the X coordinate (must be between 0 and 9 )")
+      val x = readLine.trim.toInt
+      if (x < 0 | x > 9) {
+        cellNotInbound()
+        println("cell Not in the grid" )
+        chooseAndValidateX()
+      }
+      else {
+        return x
+      }
     }
-    else{
-      return x
-    }
-  }
 
   override def chooseAndValidateY(): Int = {
-    println("Enter the Y coordinate (must be between 0 and 9 )")
-    val y = readLine.trim.toInt
-    if(y <0 || y>9){
-      cellNotInbound()
-      chooseAndValidateY()
+      println("Enter the Y coordinate (must be between 0 and 9 )")
+      val y = readLine.trim.toInt
+      if (y < 0 || y > 9) {
+        cellNotInbound()
+        chooseAndValidateY()
+      }
+      else {
+        return y
+      }
     }
-    else{
-      return y
-    }
-  }
 
   override def chooseDirection(): Int = {
-    println("Enter the direction of you boat ")
-    var dir = readLine.trim.toInt
-    if (dir ==1 || dir == 0 ){
-      return dir
+      println("Enter the direction of you boat ")
+      var dir = readLine.trim.toInt
+      if (dir == 1 || dir == 0) {
+        return dir
+      }
+      else {
+        dirIncorrect()
+        chooseDirection()
+      }
     }
-    else {
-      dirIncorrect()
-      chooseDirection()
-    }
-  }
+
+
 
 }

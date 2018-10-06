@@ -19,9 +19,9 @@ object BattleshipGame extends App {
 
   def chooseGameModePrompt() = {
     println("Player Mode : " + "\n" +
-      " - Type HH for Human-Human interaction " + "\n" +
-      " - Type AH for AI-Human interaction  " + "\n" +
-      " - Type AA for AI-AI interaction ")
+      " - Type 1 for Human-Human interaction " + "\n" +
+      " - Type 2 for AI-Human interaction  " + "\n" +
+      " - Type 3 for AI-AI interaction ")
 
   }
 
@@ -35,7 +35,19 @@ object BattleshipGame extends App {
   }
 
   def chooseNamePrompt(num: Int) = {
-    println("Choose your name player" + num)
+    println("Player" + num + ", Select Your Name")
+  }
+
+  def placeBoatsPrompt(name : String)= {
+    println("Start placing your boats " + name)
+  }
+
+  def placeSpecificBoatPrompt(boatName : String , boatLength : Int): Unit ={
+    println("Place your " + boatName + " Which Length is "+ boatLength)
+  }
+
+  def invalidInput(): Unit ={
+    println("This input is invalid, please try again")
   }
 
   def impossiblePlacement() = {
@@ -56,89 +68,63 @@ object BattleshipGame extends App {
     println("This cell was previously hit")
   }
 
+  def readStringFromConsole():String= {
+    readLine.toString.toUpperCase()
+  }
+  def readIntFromConsole():Int= {
+    readLine.toInt
+  }
+
+  def startGame()= {
+    println("Let's Start the Game Now ")
+  }
+
+  def playerTurn()={
+    println("It's Your Turn To Play")
+  }
+
 
   //@tailrec
   def mainLoop(): Unit = {
 
-    chooseGameModePrompt()
-    val gameModeInput = readLine.trim.toUpperCase
+   chooseGameModePrompt()
+    val gameModeInput =  readIntFromConsole()
 
     gameModeInput match {
-      case "HH" => {
+      case 1 => {
+        //case HH
 
-      } //case HH
+        val player1 = playerSetup(1)
+        val player2 = playerSetup(2)
 
-      case "AH" => {
+        val gameState = GameState(0, player1, player2)
 
-      } // case AH
 
-      case "AA" => {
 
-      } // case AA
+      }
+
+      case 2 => {
+        // case AH
+
+      }
+
+      case 3 => {
+        // case AA
+
+      }
 
       case _ => {
-
+        invalidInput()
+        mainLoop()
       } //case _
     } // gameModeInput match
 
 
-    val grid = Grid( Grid.createEmptyGrid(0), List())
-    val cell = Cell(1,0,0)
-    // the boat cell has to have the first cell
-    val listcases = List(cell)
-    val ship = Ship("b1",listcases, 3 , 0 , 3)
-    val shipcells = Ship.findBoatCells(ship)
-    val ship1 = ship.copy(_boatCells = shipcells)
-
-    println(grid)
-    println(shipcells)
-    println("must say tt ")
-    println(Ship.canBePositioned(grid, ship1, Option(cell)))
-    // insert in grid
-    val r = Grid.placeBoatInGrid(grid, ship1)
-    println(r)
-    println(Grid.displayGrid(r))
-    println("heya")
-    //val player = new HumanPlayer("p1" , )
-    //placeFleet(grid, Config.ShipList , )
   }
   mainLoop()
-  // boat creation
-
-  /*
-   println("lel" )
 
 
 
-   // second boat creation
-
-   // the cell has the coordinates given by the player
-   val cell2 = r.gridLayout(0)(2)
-   println("r")
-   println(r.gridLayout(0)(1))
-   println(Grid.getCellState(r, 1, 0))
-   println(r)
-   println("cell2")
-   println(cell2)
-   // initializing the list with the created cell , which will me in the boat
-   val listcases2 = List(cell2)
-   // creating the boat
-   val ship2 = Ship("b2",listcases2, 4 , 1 , 4)
-   // filling the cells of the boat
-   val shipcells2 = Ship.findBoatCells(ship2)
-   // putting the filled list in the boat
-   val ship22 = ship2.copy(_boatCells = shipcells2)
-   // check if the boat can be positioned in the grid
-
-   println("must say f ")
-   println(Ship.canBePositioned(r, ship22, Option(cell2)))
-
-   // placing the boat on the grid aka changing the status of the grid
-   println(Grid.placeBoatInGrid(r, ship22))
-
-
-  // println(Grid.createEmptyGrid(0))
-  */
   /**
     * places the ships of a player on a grid
     *
@@ -154,10 +140,13 @@ object BattleshipGame extends App {
     if (shipList.nonEmpty) {
 
       val currentShip = shipList.head
+      placeSpecificBoatPrompt(currentShip.name, currentShip.length)
+      val x = chooseAndValidateX
+      val y = chooseAndValidateY
       // take the cell that the player want to hit from the grid
-      if (Cell.cellInbound(Cell(chooseAndValidateX, chooseAndValidateY, 0))) {
+      if (Cell.cellInbound(Cell(x, y, 0))) {
 
-        val cellToPlace = Grid.fetchCell(grid, chooseAndValidateX, chooseAndValidateY)
+        val cellToPlace = Grid.fetchCell(grid, x, y)
 
         // initializing the list with the created cell , which will be in the boat
         val listCells = List(cellToPlace.get)
@@ -174,7 +163,9 @@ object BattleshipGame extends App {
           // adding boat to player fleet
           val finalBoatList = finalShip :: fleet.fleet
           val finalFleet = fleet.copy(finalBoatList , fleet.numberOfBoatsLeft +1)
-          // displayGrid ToDo
+          println("in place fleet")
+          println(grid2)
+          println(Grid.displayGrid(grid2))
           placeFleet(grid2, shipList.tail, finalFleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
         }
@@ -251,5 +242,27 @@ object BattleshipGame extends App {
     }
 
 }
+
+  /**
+    * setups a player , aka give a name, a primarygrid, an empty tracking grid, a fleet and a state equal to alive
+    * @param playerNum
+    * @return
+    */
+  def playerSetup(playerNum: Int) : Player ={
+    chooseNamePrompt(playerNum)
+    val playerName = readStringFromConsole()
+
+    val player = new HumanPlayer(playerName)
+    // setting up the grid
+    val primaryGrid = Grid.createEmptyGrid(0)
+    val listCell= List[Cell]()
+    val grid = Grid(primaryGrid, listCell)
+
+
+    placeBoatsPrompt(playerName)
+    val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX(), player.chooseAndValidateY(), player.chooseDirection())
+    HumanPlayer(playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
+
+  }
 
 }

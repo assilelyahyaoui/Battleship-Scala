@@ -35,7 +35,7 @@ object Grid {
     */
   def nextXGridCell(grid: List[List[Cell]] , cell: Cell): Option[Cell] ={
 
-    Some((grid(cell.cellYCoordinate))(cell.cellXCoordinate +1))
+    Option((grid(cell.cellYCoordinate)) (cell.cellXCoordinate + 1))
 
   }
 
@@ -88,6 +88,7 @@ object Grid {
 
   /**
     * creates a grid of cells usind the createColums method
+    * when calling this method for the first time, row = 0
     * @param row is an index to see which row we are on
     * @return a grid containing cells
     */
@@ -157,16 +158,16 @@ object Grid {
 
 
   def displayGrid(grid: Grid)= {
-     grid.gridLayout.map( line => line.map(
+    grid.gridLayout.map( line => line.map(
           cell =>
-            cell.cellState match{
+            "|"+(cell.cellState match{
               case 0 =>  Console.BLUE_B+" "+Console.INVISIBLE
               case 1 =>  Console.YELLOW_B+" "+Console.INVISIBLE
               case 2 =>  Console.RED_B+" "+Console.INVISIBLE
               case 3 =>  Console.WHITE+" "+Console.INVISIBLE
 
-            }
-      ) +"\n"
+            })+ "|"
+      ) +"\n"+ "   "
       )
 
   }
