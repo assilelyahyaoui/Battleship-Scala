@@ -17,8 +17,6 @@ class CellTest extends FunSuite with DiagrammedAssertions {
     assert(!Cell.cellInbound(cell1))
     assert(!Cell.cellInbound(cell2))
     assert(!Cell.cellInbound(cell5))
-
-
   }
 
   test("Testing the Cell class : nextXCell "){
