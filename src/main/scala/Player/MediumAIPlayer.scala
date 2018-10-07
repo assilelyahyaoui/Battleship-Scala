@@ -14,7 +14,7 @@ import scala.io.StdIn.readLine
   */
 
 
-case class LowAIPlayer(private val  _playerName : String, private val  _primaryGrid : Grid,
+case class MediumAIPlayer(private val  _playerName : String, private val  _primaryGrid : Grid,
                        private val  _trackingGrid : Grid, private val _fleet : Fleet,
                        private val _isAlive : Int, private val _hitList : List[(Int, Int)] ) extends  AIPlayer {
 
@@ -39,7 +39,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
   def copyWithHitList(hitList: List[(Int, Int)]): Player = this.copy(_hitList = hitList )
 
 
-  def randomHit(previousHit: (Int,Int)): (Int,Int) = {
+  def randomHit(): (Int,Int) = {
     //hitList = (0+ Random.nextInt(Config.gridXMax), 0+ Random.nextInt(Config.gridYMax))
     (0+ Random.nextInt(Config.gridXMax),0+ Random.nextInt(Config.gridYMax))
   }
@@ -55,12 +55,15 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
   override def chooseDirection: Int = Random.nextInt(2)
 
   override def chooseHitX: Int = {
-    val rh = randomHit(hitList.last._1, hitList.last._2)
+    //val rh = randomHit(hitList.last._1, hitList.last._2)
+    val rh = randomHit()
+
     rh._1
   }
 
   override def chooseHitY: Int = {
-    val rh = randomHit(hitList.last._1, hitList.last._2)
+   // val rh = randomHit(hitList.last._1, hitList.last._2)
+   val rh = randomHit()
     rh._1
   }
 
