@@ -14,5 +14,5 @@ import scala.io.StdIn.readLine
 
 trait AIPlayer extends  Player{
   val hitList: List[(Int, Int)]
-  def randomHit(): (Int,Int)
+  def chooseHit(): (Int,Int)
 }

@@ -21,7 +21,8 @@ object BattleshipGame extends App {
     println("Player Mode : " + "\n" +
       " - Type 1 for Human-Human interaction " + "\n" +
       " - Type 2 for AI-Human interaction  " + "\n" +
-      " - Type 3 for AI-AI interaction ")
+      " - Type 3 for AI-AI interaction "+ "\n" +
+      " - Type 4 for AI-AI stats ")
 
   }
 
@@ -31,6 +32,14 @@ object BattleshipGame extends App {
       " - Type 1 for low level AI  " + "\n" +
       " - Type 2 for medium level AI " + "\n" +
       " - Type 3 for high level AI ")
+
+  }
+  def chooseAIvsAIPrompt() = {
+    println("AI mode : type 1 , 2 or 3 to choose the battle")
+    println("AI Mode : " + "\n" +
+      " - Type 1 for low level AI vs medium level AI  " + "\n" +
+      " - Type 2 for low level AI vs high level AI  " + "\n" +
+      " - Type 3 for medium level AI vs high level" + "\n" )
 
   }
 
@@ -99,7 +108,7 @@ object BattleshipGame extends App {
   }
 
   def pressEnterToContinue() = {
-    println("Press Any Key to Continue")
+    println("Press Any Key Followed By Enter to Continue")
     readLine()
   }
 
@@ -132,8 +141,10 @@ object BattleshipGame extends App {
 
       case 2 => {
         // case AH
+        chooseAIPrompt()
+        val HAIType = readIntFromConsole()
         val player1 = playerSetup(1, "h")
-        val ai1 = playerSetup(2 , "lai")
+        val ai1 = HAIPlayerTypeSetup(HAIType)
         val gameState = GameState(0, player1, ai1)
         gameLoop(gameState, 1)
 
@@ -142,7 +153,23 @@ object BattleshipGame extends App {
 
       case 3 => {
         // case AA
+        chooseAIvsAIPrompt()
+        val AIAIType = readIntFromConsole()
+        val players = AIAIPlayerTypeSetup(AIAIType)
+        val player1 = players._1
+        val player2 = players._2
+        val gameState = GameState(0, player1, player2)
+        gameLoop(gameState, 1)
 
+      }
+      case 4 =>{
+        chooseAIvsAIPrompt()
+        val AIAIType = readIntFromConsole()
+        val players = AIAIPlayerTypeSetup(AIAIType)
+        val player1 = players._1
+        val player2 = players._2
+        val gameState = GameState(0, player1, player2)
+        println(gameStats(gameState, 100, 0, 0))
       }
 
       case _ => {
@@ -270,16 +297,16 @@ object BattleshipGame extends App {
 
     playerTurn(player1.playerName)
 
-    pressEnterToContinue()
+    //pressEnterToContinue()
     clearScreen()
     primaryGridPrompt()
     println(Grid.displayGrid(player1.primaryGrid))
     trackingGridPrompt()
     println(Grid.displayGrid(player1.trackingGrid))
 
-
-    val x = player1.chooseHitX
-    val y = player1.chooseHitY
+    val hit = player1.chooseHit
+    val x = hit._1
+    val y = hit._2
 
 
     val state = Grid.getCellState(player2.primaryGrid, x, y)
@@ -393,7 +420,68 @@ object BattleshipGame extends App {
     }
   }
 
+  /**
+    * generates a type of player by taking the game mode into consideration
+    * @param AIType int, representing the game mode
+    * @return a playeer of the correct type
+    */
+  def HAIPlayerTypeSetup(AIType : Int ): Player = {
+  AIType match {
+    case 2 => { // medium
+      playerSetup(2 , "hai")
 
+    }
+    case 3 => { // high
+      playerSetup(2 , "mai")
+
+    }
+    case _ => {
+      // assume Low level
+      playerSetup(2 , "lai")
+
+    }
+
+  }
+}
+
+  def AIAIPlayerTypeSetup(AIType : Int ): (Player,Player) = {
+    AIType match {
+      case 2 => { // medium
+        (playerSetup(1 , "lai"), playerSetup(2 , "hai"))
+
+      }
+      case 3 => { // high
+        (playerSetup(1 , "mai"), playerSetup(2 , "hai"))
+
+      }
+      case _ => {
+        // assume Low level
+        (playerSetup(1 , "lai"), playerSetup(2 , "mai"))
+
+      }
+
+    }
+  }
+
+  def gameStats(gameState: GameState, numRounds : Int, scoreP1 : Int, scoreP2 : Int):String = {
+
+    if (numRounds>0){
+      val winner = gameLoop(gameState, 1 )
+      println(winner)
+
+      if (winner == gameState.player1){
+        gameStats(gameState, numRounds-1, scoreP1+1 , scoreP2)
+      }
+      else{
+        gameStats(gameState, numRounds-1, scoreP1 , scoreP2+1)
+      }
+
+    }
+    else {
+      val score = "\n"+ "Score : " + "\n" + gameState.player1.playerName + "  " + scoreP1 + " wins" + "\n" + gameState.player2.playerName + "  " + scoreP2 + " wins" +"\n"
+      score
+    }
+  }
   /*def chooseAILevel(): Player = {
     chooseAIPrompt()
     val level = readIntFromConsole()

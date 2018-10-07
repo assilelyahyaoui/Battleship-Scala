@@ -108,4 +108,9 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
       return y
     }
   }
+
+  override def chooseHit() : (Int,Int)= {
+    (chooseHitX(), chooseHitY())
+  }
+
 }

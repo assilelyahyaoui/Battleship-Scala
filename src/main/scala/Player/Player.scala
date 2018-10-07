@@ -44,6 +44,7 @@ trait Player{
 
   def copyWithFleet(fleet: Fleet) : Player
 
+  def chooseHit : (Int,Int)
   def chooseAndValidateX : Int
   def chooseAndValidateY : Int
   def chooseDirection : Int

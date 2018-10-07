@@ -39,7 +39,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
   def copyWithHitList(hitList: List[(Int, Int)]): Player = this.copy(_hitList = hitList )
 
 
-  def randomHit(): (Int,Int) = {
+  def chooseHit(): (Int,Int) = {
     //hitList = (0+ Random.nextInt(Config.gridXMax), 0+ Random.nextInt(Config.gridYMax))
     (0+ Random.nextInt(Config.gridXMax),0+ Random.nextInt(Config.gridYMax))
   }
@@ -55,12 +55,12 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
   override def chooseDirection: Int = Random.nextInt(2)
 
   override def chooseHitX: Int = {
-    val rh = randomHit()
+    val rh = chooseHit()
     rh._1
   }
 
   override def chooseHitY: Int = {
-    val rh = randomHit()
+    val rh = chooseHit()
     rh._1
   }
 
