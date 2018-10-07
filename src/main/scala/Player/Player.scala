@@ -48,5 +48,8 @@ trait Player{
   def chooseAndValidateY : Int
   def chooseDirection : Int
 
+  def chooseHitX : Int
+  def chooseHitY : Int
+
 
 }

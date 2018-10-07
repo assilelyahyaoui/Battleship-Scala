@@ -5,7 +5,7 @@ import Grid._
 import scala.io.StdIn.readLine
 
 /**
-  * class representing on of the players, they have the following items
+  * class representing one of the players, they have the following items
   * @param playerName the player's name
   * @param primaryGrid the grid where the player sets his boats
   * @param trackingGrid the grid where the player keeps track of his opponent's grid
@@ -83,6 +83,29 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
       }
     }
 
+  override def chooseHitX(): Int=  {
+    println("Enter the X Coordinate You Want To Hit (must be between 0 and 9 )")
+    val x = readLine.trim.toInt
+    if (x < 0 | x > 9) {
+      cellNotInbound()
+      println("Cell Not In The Grid" )
+      chooseAndValidateX()
+    }
+    else {
+      return x
+    }
+  }
 
 
+  override def chooseHitY(): Int= {
+    println("Enter the Y Coordinate You Want To Hit (must be between 0 and 9 )")
+    val y = readLine.trim.toInt
+    if (y < 0 || y > 9) {
+      cellNotInbound()
+      chooseAndValidateY()
+    }
+    else {
+      return y
+    }
+  }
 }

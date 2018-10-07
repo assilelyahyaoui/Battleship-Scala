@@ -3,8 +3,8 @@ import Boats._
 
 object Config {
   val ShipList = List(ShipType("Destroyer", 2))
-  val gridX = 10
-  val gridY = 10
+  val gridXMax = 10
+  val gridYMax = 10
 
 
   /*
