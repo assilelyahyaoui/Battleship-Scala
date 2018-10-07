@@ -184,6 +184,12 @@ object Grid {
     num
   }
 
+  def allCellsHit(grid: Grid): Seq[Cell] = {
+    var liste = Seq[Cell];
+    grid.gridLayout.map(line  => line.map( cell => if (cell.cellState == 2){ cell :: liste }))
+
+  }
+
 
 
 }

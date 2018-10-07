@@ -4,7 +4,7 @@
 		module="battleship-scala$sources"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20181004115116"
+		publication="20181007100532"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

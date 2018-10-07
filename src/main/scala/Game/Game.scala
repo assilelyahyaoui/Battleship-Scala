@@ -116,8 +116,8 @@ object BattleshipGame extends App {
         //case HH
 
         //Remove from commentaries  the two lines
-        val player1 = playerSetup(1)
-        val player2 = playerSetup(2)
+        val player1 = playerSetup(1 , "h")
+        val player2 = playerSetup(2 , "h")
         val gameState = GameState(0, player1, player2)
 
         //val primGridP1 = Grid(List(List(Cell(0,0,1), Cell(1,0,0), Cell(2,0,0), Cell(3,0,0), Cell(4,0,0), Cell(5,0,0), Cell(6,0,0), Cell(7,0,0), Cell(8,0,0), Cell(9,0,0)), List(Cell(0,1,0), Cell(1,1,1), Cell(2,1,0), Cell(3,1,0), Cell(4,1,0), Cell(5,1,0), Cell(6,1,0), Cell(7,1,0), Cell(8,1,0), Cell(9,1,0)), List(Cell(0,2,0), Cell(1,2,1), Cell(2,2,1), Cell(3,2,0), Cell(4,2,0), Cell(5,2,0), Cell(6,2,0), Cell(7,2,0), Cell(8,2,0), Cell(9,2,0)), List(Cell(0,3,0), Cell(1,3,1), Cell(2,3,1), Cell(3,3,1), Cell(4,3,0), Cell(5,3,0), Cell(6,3,0), Cell(7,3,0), Cell(8,3,0), Cell(9,3,0)), List(Cell(0,4,0), Cell(1,4,1), Cell(2,4,1), Cell(3,4,1), Cell(4,4,1), Cell(5,4,0), Cell(6,4,0), Cell(7,4,0), Cell(8,4,0), Cell(9,4,0)), List(Cell(0,5,0), Cell(1,5,1), Cell(2,5,1), Cell(3,5,1), Cell(4,5,1), Cell(5,5,1), Cell(6,5,0), Cell(7,5,0), Cell(8,5,0), Cell(9,5,0)), List(Cell(0,6,0), Cell(1,6,0), Cell(2,6,0), Cell(3,6,0), Cell(4,6,1), Cell(5,6,1), Cell(6,6,0), Cell(7,6,0), Cell(8,6,0), Cell(9,6,0)), List(Cell(0,7,0), Cell(1,7,0), Cell(2,7,0), Cell(3,7,0), Cell(4,7,0), Cell(5,7,0), Cell(6,7,0), Cell(7,7,0), Cell(8,7,0), Cell(9,7,0)), List(Cell(0,8,0), Cell(1,8,0), Cell(2,8,0), Cell(3,8,0), Cell(4,8,0), Cell(5,8,0), Cell(6,8,0), Cell(7,8,0), Cell(8,8,0), Cell(9,8,0)), List(Cell(0,9,0), Cell(1,9,0), Cell(2,9,0), Cell(3,9,0), Cell(4,9,0), Cell(5,9,0), Cell(6,9,0), Cell(7,9,0), Cell(8,9,0), Cell(9,9,0))),List())
@@ -132,12 +132,10 @@ object BattleshipGame extends App {
 
       case 2 => {
         // case AH
-        val player1 = playerSetup(1)
-        //val ai1 = aiSetup(1)
-        //val gameState = GameState(0, player1, ai1)
-        ///gameLoop(gameState, 1)
-
-
+        val player1 = playerSetup(1, "h")
+        val ai1 = playerSetup(2 , "lai")
+        val gameState = GameState(0, player1, ai1)
+        gameLoop(gameState, 1)
 
 
       }
@@ -155,8 +153,8 @@ object BattleshipGame extends App {
 
 
   }
- // mainLoop()
- val grid = Grid( Grid.createEmptyGrid(0), List())
+  mainLoop()
+ /*val grid = Grid( Grid.createEmptyGrid(0), List())
   val grid2 = Grid( Grid.createEmptyGrid(0), List())
   val fleet = new Fleet(List[Ship](), 1)
 
@@ -164,6 +162,34 @@ object BattleshipGame extends App {
   println(player.randomHit(1,1))
   println(player.chooseDirection)
 
+*/
+
+  /**
+    * return a subtype of player , initialiwed with a name
+    * @param playerType the type wanted
+    * @param playerName the name given to the player
+    * @return a subtype of player
+    */
+  def newPlayerWithType(playerType : String, playerName : String): Player={
+    playerType match {
+      case "h" => new HumanPlayer(playerName)
+     // case "mai" => new MediumAIPlayere(playerName)
+     // case "hai" => new HighAIPlayer(playerName)
+      case _ => new LowAIPlayer(playerName)
+
+    }
+  }
+
+
+  def newPlayerWithTypeAndGrid(playerType : String, playerName : String, grid: Grid , grid2 : Grid, fleet: Fleet , isAlive : Int): Player={
+    playerType match {
+      case "h" => new HumanPlayer(playerName, grid , grid2 , fleet, isAlive)
+      // case "mai" => new MediumAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      //case "hai" => new HighAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case _ => new LowAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+
+    }
+  }
 
   /**
     * places the ships of a player on a grid
@@ -242,7 +268,6 @@ object BattleshipGame extends App {
     // make modifications to the tracking grid and to the other player hit list
     // dont forget to sopy the grids to the players and to the game
 
-    ()
     playerTurn(player1.playerName)
 
     pressEnterToContinue()
@@ -276,6 +301,7 @@ object BattleshipGame extends App {
         val p1copy = player1.copyWithTrackingGrid(newTrackingGrid)
         val p2copy = player2.copyWithPrimaryGrid(newPrimaryGrid)
 
+
         ( p1copy,  p2copy)
 
       }
@@ -307,15 +333,17 @@ object BattleshipGame extends App {
 }
 
   /**
-    * setups a player , aka give a name, a primarygrid, an empty tracking grid, a fleet and a state equal to alive
+    * setups a  player , aka give a name, a primarygrid, an empty tracking grid, a fleet and a state equal to alive
     * @param playerNum
     * @return the setuped player
     */
-  def playerSetup(playerNum: Int) : Player ={
+  def playerSetup(playerNum: Int, playerType : String) : Player ={
     chooseNamePrompt(playerNum)
     val playerName = readStringFromConsole()
 
-    val player = new HumanPlayer(playerName)
+    val player = newPlayerWithType( playerType , playerName)
+    println(player)
+    // val player = newPlayerWithType()
     // setting up the grid
     val primaryGrid = Grid.createEmptyGrid(0)
     val listCell= List[Cell]()
@@ -323,8 +351,10 @@ object BattleshipGame extends App {
 
 
     placeBoatsPrompt(playerName)
-    val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX(), player.chooseAndValidateY(), player.chooseDirection())
-    HumanPlayer(playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
+    val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
+    println("final player")
+    println(  newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 ))
+    newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
 
   }
 
@@ -368,8 +398,9 @@ object BattleshipGame extends App {
     chooseAIPrompt()
     val level = readIntFromConsole()
     level match {
-      case 2 => new AIPlayer()
-      case 3 =>
+      //case 2 => new AIPlayer()
+      //case 3 =>
+      case _ => new LowAIPlayer()
     }
   }*/
 
