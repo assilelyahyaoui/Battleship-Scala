@@ -63,6 +63,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
     val rh = chooseHit()
     rh._1
   }
+  override def changesAfterCellHit(x:Int , y:Int, hit:Int): Player = {this}
 
 
 }

@@ -169,7 +169,7 @@ object BattleshipGame extends App {
         val player1 = players._1
         val player2 = players._2
         val gameState = GameState(0, player1, player2)
-        println(gameStats(gameState, 100, 0, 0))
+        println(gameStats(gameState, Config.numRoundsOfTest, 0, 0))
       }
 
       case _ => {
@@ -200,8 +200,8 @@ object BattleshipGame extends App {
   def newPlayerWithType(playerType : String, playerName : String): Player={
     playerType match {
       case "h" => new HumanPlayer(playerName)
-     // case "mai" => new MediumAIPlayere(playerName)
-     // case "hai" => new HighAIPlayer(playerName)
+      case "mai" => new MediumAIPlayer(playerName)
+      case "hai" => new HighAIPlayer(playerName)
       case _ => new LowAIPlayer(playerName)
 
     }
@@ -211,8 +211,8 @@ object BattleshipGame extends App {
   def newPlayerWithTypeAndGrid(playerType : String, playerName : String, grid: Grid , grid2 : Grid, fleet: Fleet , isAlive : Int): Player={
     playerType match {
       case "h" => new HumanPlayer(playerName, grid , grid2 , fleet, isAlive)
-      // case "mai" => new MediumAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
-      //case "hai" => new HighAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case "mai" => new MediumAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case "hai" => new HighAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
       case _ => new LowAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
 
     }
@@ -325,7 +325,9 @@ object BattleshipGame extends App {
 
 
         // return the new players
-        val p1copy = player1.copyWithTrackingGrid(newTrackingGrid)
+        val p1CellHit = player1.changesAfterCellHit(x, y, 0)
+
+        val p1copy = p1CellHit.copyWithTrackingGrid(newTrackingGrid)
         val p2copy = player2.copyWithPrimaryGrid(newPrimaryGrid)
 
 
@@ -343,9 +345,15 @@ object BattleshipGame extends App {
         val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 2)
 
 
+
         // return the new players
-        val p1copy = player1.copyWithTrackingGrid(newTrackingGrid)
+        val p1CellHit = player1.changesAfterCellHit(x, y,1)
+        //val p2CellHit = player2.changesAfterCellHit(x, y)
+
+        val p1copy = p1CellHit.copyWithTrackingGrid(newTrackingGrid)
         val p2copy = player2.copyWithPrimaryGrid(newPrimaryGrid)
+
+
 
         ( p1copy,  p2copy)
 
@@ -353,7 +361,9 @@ object BattleshipGame extends App {
       case _ => {
         // cell previously hit
         cellPreviouslyHitPrompt()
-        (player1, player2)
+        val p1Cell = player1.changesAfterCellHit(x, y,2)
+
+        (p1Cell, player2)
       }
     }
 
@@ -369,7 +379,6 @@ object BattleshipGame extends App {
     val playerName = readStringFromConsole()
 
     val player = newPlayerWithType( playerType , playerName)
-    println(player)
     // val player = newPlayerWithType()
     // setting up the grid
     val primaryGrid = Grid.createEmptyGrid(0)
@@ -379,8 +388,7 @@ object BattleshipGame extends App {
 
     placeBoatsPrompt(playerName)
     val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
-    println("final player")
-    println(  newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 ))
+
     newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
 
   }
@@ -428,11 +436,11 @@ object BattleshipGame extends App {
   def HAIPlayerTypeSetup(AIType : Int ): Player = {
   AIType match {
     case 2 => { // medium
-      playerSetup(2 , "hai")
+      playerSetup(2 , "mai")
 
     }
     case 3 => { // high
-      playerSetup(2 , "mai")
+      playerSetup(2 , "hai")
 
     }
     case _ => {

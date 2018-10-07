@@ -113,4 +113,5 @@ case class HumanPlayer(private val  _playerName : String, private val  _primaryG
     (chooseHitX(), chooseHitY())
   }
 
+  override def changesAfterCellHit(x:Int , y:Int, hit :Int): Player = {this}
 }

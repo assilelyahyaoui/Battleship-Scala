@@ -52,5 +52,7 @@ trait Player{
   def chooseHitX : Int
   def chooseHitY : Int
 
+  def changesAfterCellHit(x:Int , y:Int,hit :Int) : Player
+
 
 }
