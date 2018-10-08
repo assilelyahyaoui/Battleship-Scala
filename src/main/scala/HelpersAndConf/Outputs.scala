@@ -1,5 +1,6 @@
 package HelpersAndConf
 import scala.io.StdIn.readLine
+import java.io._
 
 object Outputs {
 
@@ -9,8 +10,8 @@ object Outputs {
       " - Type 1 for Human-Human interaction " + "\n" +
       " - Type 2 for AI-Human interaction  " + "\n" +
       " - Type 3 for AI-AI interaction " + "\n" +
-      " - Type 4 for AI-AI stats ")
-
+      " - Type 4 for AI-AI stats "+ "\n" +
+      " - Type 5 for the 3 AI-AI stats "+ "\n")
   }
 
   def chooseAIPrompt() = {
@@ -103,4 +104,18 @@ object Outputs {
     println("Press Any Key Followed By Enter to Continue")
     readLine()
   }
+
+
+  /**
+    * Function that write into a file the content put as parameters
+    * @param location: String: name and location of the file on the computer
+    * @param content: String: Content to write into the file
+    */
+  def writeToFile(location: String, content: String): Unit = {
+    val bw = new BufferedWriter(new FileWriter(location))
+    bw.write(content)
+    bw.flush()
+    bw.close()
+  }
+
 }

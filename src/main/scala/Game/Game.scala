@@ -1,5 +1,7 @@
 package Game
 
+import java.io.File
+
 import Boats._
 
 import scala.io.StdIn.readLine
@@ -75,6 +77,29 @@ object BattleshipGame extends App {
         val player2 = players._2
         val gameState = GameState(0, player1, player2)
         println(gameStats(gameState, Config.numRoundsOfTest, 0, 0))
+        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState, Config.numRoundsOfTest, 0, 0) )
+      }
+      case 5 =>{
+        val players = AIAIPlayerTypeSetup(1)
+        val player1 = players._1
+        val player2 = players._2
+        val gameState = GameState(0, player1, player2)
+        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState, Config.numRoundsOfTest, 0, 0) )
+
+        val players2 = AIAIPlayerTypeSetup(1) //TODO CHANGE TO 2
+        val player12 = players2._1
+        val player22 = players2._2
+        val gameState2 = GameState(0, player12, player22)
+        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState2, Config.numRoundsOfTest, 0, 0) )
+
+
+        val players3 = AIAIPlayerTypeSetup(1) // TODO CHANGE TO 3
+        val player13 = players3._1
+        val player23 = players3._2
+        val gameState3 = GameState(0, player13, player23)
+        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState3, Config.numRoundsOfTest, 0, 0) )
+
+
       }
 
       case _ => {
@@ -403,7 +428,7 @@ object BattleshipGame extends App {
 
     }
     else {
-      val score = "\n"+ "Score : " + "\n" + gameState.player1.playerName + "  " + scoreP1 + " wins" + "\n" + gameState.player2.playerName + "  " + scoreP2 + " wins" +"\n"
+      val score = gameState.player1.playerName + " ; " + scoreP1 + " ;"  + gameState.player2.playerName + " ; " + scoreP2  +"\n"
       score
     }
   }
