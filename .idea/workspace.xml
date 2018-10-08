@@ -2,37 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b98ed36-0235-45ed-b144-154a0d99ca1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/battleship-scala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/battleship-scala.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/GridTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/HighAIPlayer.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Grid/Cell.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Grid/Cell.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Grid/Grid.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Grid/Grid.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/Player.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/Player.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Game/BattleshipGame$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/HelpersAndConf/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Cell$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Cell$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/CellType$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/CellType$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/CellType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/CellType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Grid$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Grid$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Grid/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HighAIPlayer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HighAIPlayer$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HighAIPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HighAIPlayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/HumanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/LowAIPlayer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/LowAIPlayer$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/LowAIPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/LowAIPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/MediumAIPlayer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/MediumAIPlayer$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/MediumAIPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/MediumAIPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Player/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/com.battleship/battleship-scala$sources/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/com.battleship/battleship-scala$sources/0.1.0-SNAPSHOT/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/com.battleship/battleship-scala$sources/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/com.battleship/battleship-scala$sources/0.1.0-SNAPSHOT/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-compile-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-compile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-optional.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-provided.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-runtime-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-runtime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-scala-tool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-test-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/com.battleship-battleship-scala$sources-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -42,6 +38,25 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="11">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-1235">
+                    <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -79,17 +94,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
+          <entry key="class" value="4" />
           <entry key="java" value="1" />
           <entry key="sbt" value="1" />
-          <entry key="scala" value="52" />
+          <entry key="scala" value="94" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
+          <entry key="CLASS" value="4" />
           <entry key="JAVA" value="1" />
-          <entry key="Scala" value="52" />
+          <entry key="Scala" value="94" />
           <entry key="sbt" value="1" />
         </counts>
       </usages-collector>
@@ -97,13 +112,13 @@
         <counts>
           <entry key="java" value="10" />
           <entry key="sbt" value="67" />
-          <entry key="scala" value="23366" />
+          <entry key="scala" value="27357" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="10" />
-          <entry key="Scala" value="23366" />
+          <entry key="Scala" value="27357" />
           <entry key="sbt" value="67" />
         </counts>
       </usages-collector>
@@ -113,43 +128,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/GridTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="366" column="7" lean-forward="true" selection-start-line="366" selection-start-column="7" selection-end-line="366" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding>
-                <element signature="e#14#28#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2038">
-              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+            <state relative-caret-position="139">
+              <caret line="13" column="28" lean-forward="true" selection-end-line="60" />
               <folding>
-                <element signature="e#14#27#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Grid.scala">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="98">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#1#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/HighAIPlayer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+              <folding>
+                <element signature="e#1#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-106">
-              <caret line="123" column="23" lean-forward="true" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+            <state relative-caret-position="168">
+              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-end-line="44" />
               <folding>
                 <element signature="e#16#30#0" expanded="true" />
               </folding>
@@ -158,39 +188,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Player/Player.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
-              <folding>
-                <element signature="e#15#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="240">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
               <folding>
                 <element signature="e#15#29#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Player/Player.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="40" column="15" selection-start-line="40" selection-end-line="41" />
+              <folding>
+                <element signature="e#15#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-313">
+              <caret line="15" column="29" selection-start-line="15" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/CellTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -210,7 +256,6 @@
       <find>Ente</find>
       <find>clear</find>
       <find>choo</find>
-      <find>chooseAndValidateX</find>
       <find>chooseAndValidate</find>
       <find>flee</find>
       <find>// ma</find>
@@ -224,6 +269,7 @@
       <find>hit</find>
       <find>HIT</find>
       <find>HIT(</find>
+      <find>chooseAndValidateX</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,18 +287,22 @@
         <option value="$PROJECT_DIR$/src/test/scala/Boats/ShipTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/ShipTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Boats/Ship.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Grid/Cell.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/CellTest.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Grid/Grid.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/Player.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Grid/Grid.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Game/Game.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Grid/Cell.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/GridTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/HighAIPlayer.scala" />
       </list>
     </option>
   </component>
@@ -352,7 +402,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538910508280" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538993588368" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -377,7 +427,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BattleshipGame">
+  <component name="RunManager" selected="ScalaTest.GridTest">
     <configuration name="BattleshipGame" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Game.BattleshipGame" />
       <module name="battleship-scala" />
@@ -392,6 +442,23 @@
       <setting name="consoleargs" value="" />
       <setting name="params" value="" />
       <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="battleship-scala" />
+      <setting name="path" value="GridTest" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="GridTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -431,9 +498,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="ScalaTest.ShipTest" />
       <item itemvalue="Application.BattleshipGame" />
       <item itemvalue="Scala Script.BattleshipGame" />
+      <item itemvalue="ScalaTest.GridTest" />
+      <item itemvalue="ScalaTest.ShipTest" />
       <item itemvalue="ScalaTest.HumanPlayerTest" />
     </list>
     <recent_temporary>
@@ -532,7 +600,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14520743" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14520743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -540,8 +608,8 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5626506" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.05421687" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47108433" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -564,7 +632,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14306152" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14520743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -573,8 +641,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33614457" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37349397" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.05421687" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47108433" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -583,7 +651,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.6012048" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -604,267 +672,285 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>93</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>104</line>
+          <line>171</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>113</line>
+          <line>180</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>121</line>
+          <line>188</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>86</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>43</line>
+          <line>76</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>56</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>44</line>
+          <line>77</line>
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>45</line>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>144</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>145</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>147</line>
+          <line>148</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>146</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>148</line>
+          <line>149</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>445</line>
+          <line>446</line>
           <properties />
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>447</line>
+          <line>448</line>
           <properties />
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>438</line>
+          <line>439</line>
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>442</line>
+          <line>443</line>
           <properties />
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>436</line>
+          <line>437</line>
           <properties />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>378</line>
+          <line>379</line>
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>380</line>
+          <line>381</line>
           <properties />
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>383</line>
+          <line>384</line>
           <properties />
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>210</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>213</line>
+          <line>214</line>
           <properties />
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>212</line>
+          <line>213</line>
           <properties />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>215</line>
+          <line>216</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>201</line>
+          <line>202</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>140</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>202</line>
+          <line>203</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>203</line>
+          <line>204</line>
           <properties />
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>327</line>
+          <line>328</line>
           <properties />
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>330</line>
+          <line>331</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>319</line>
+          <line>320</line>
           <properties />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>318</line>
+          <line>319</line>
           <properties />
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>323</line>
+          <line>324</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>97</line>
+          <line>164</line>
           <properties />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>348</line>
+          <line>349</line>
           <properties />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>349</line>
+          <line>350</line>
           <properties />
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>350</line>
+          <line>351</line>
           <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>353</line>
+          <line>354</line>
           <properties />
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>352</line>
+          <line>353</line>
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>137</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala</url>
-          <line>138</line>
+          <line>209</line>
           <properties />
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>357</line>
+          <line>358</line>
           <properties />
           <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/CellTest.scala</url>
+          <line>14</line>
+          <properties />
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/GridTest.scala</url>
+          <line>4</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/GridTest.scala</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -873,22 +959,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/BattleshipGame.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/GameState.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/collection/immutable/List.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -911,38 +983,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Fleet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/CellTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar!/scala/Function0.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ShipTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="3" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
@@ -953,24 +997,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Cell.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/ShipTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="-365">
+          <caret line="8" column="3" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Fleet.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1647">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding>
+            <element signature="e#14#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/BattleshipGame.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7560">
+          <caret line="504" column="3" selection-start-line="504" selection-start-column="3" selection-end-line="504" selection-end-column="3" />
+          <folding>
+            <element signature="e#14#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/GameState.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="e#16#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Coordinate.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Cell.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
           </folding>
@@ -979,42 +1084,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Grid/Grid.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="15">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Boats/Ship.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2038">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="-313">
+          <caret line="15" column="29" selection-start-line="15" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/CellTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="13" column="28" lean-forward="true" selection-end-line="60" />
           <folding>
-            <element signature="e#14#27#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/HighAIPlayer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+        <state relative-caret-position="423">
+          <caret line="57" column="65" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
           <folding>
-            <element signature="e#16#30#0" expanded="true" />
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#1#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/GridTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+        <state relative-caret-position="-1235">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HumanPlayer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="115" column="58" selection-start-line="115" selection-start-column="58" selection-end-line="115" selection-end-column="58" />
+        <state relative-caret-position="168">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-end-line="44" />
+          <folding>
+            <element signature="e#16#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
           </folding>
@@ -1023,30 +1179,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Player/Player.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        <state relative-caret-position="438">
+          <caret line="40" column="15" selection-start-line="40" selection-end-line="41" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="366" column="7" lean-forward="true" selection-start-line="366" selection-start-column="7" selection-end-line="366" selection-end-column="7" />
-          <folding>
-            <element signature="e#14#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="123" column="23" lean-forward="true" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
-          <folding>
-            <element signature="e#16#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

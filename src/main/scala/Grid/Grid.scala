@@ -137,26 +137,33 @@ object Grid {
   }
 
   /**
-    * delete a cell from a list of cells
-    * @param list
-    * @param cell
-    * @return
+    * gets the state of the cell
+    * @param grid represent the grid on which the cell is situated
+    * @param x the x coordinate of the cell
+    * @param y the y coordinate of the cell
+    * @return returns an int O = empty ,  1 = there is a boat on it , 2 = shot and hit(red) , 3 = shot and missed(white)
     */
-  def deleteCellFromList(list : List[Cell], cell: Cell): List[Cell] = {
-    //TODO
-    return Nil
-  }
-
   def getCellState(grid: Grid, x:Int, y:Int): Int ={
     grid.gridLayout(y)(x).cellState
   }
 
+  /**
+    * returns the cell wanted
+    * @param grid represent the grid on which the cell is situated
+    * @param x the x coordinate of the cell
+    * @param y the y coordinate of the cell
+    * @return an option of Cell . Some if the cell is in the grid, none otherwise
+    */
   def fetchCell(grid: Grid, x:Int, y:Int): Option [Cell] ={
     Some(grid.gridLayout(y)(x))
   }
 
 
-
+  /**
+    * displays the grid on the console
+    * @param grid the grid we want to display
+    * @return a List of Strings
+    */
   def displayGrid(grid: Grid)= {
     grid.gridLayout.map( line => line.map(
           cell =>
@@ -172,12 +179,22 @@ object Grid {
 
   }
 
+  /**
+    * the numbers of cells containing a boat left
+    * @param grid the grid we wznt to check out
+    * @return an int containing the number of cells
+    */
   def boatCellsLeft(grid: Grid): Int = {
     var num = 0 ;
     grid.gridLayout.map(line  => line.map( cell => if (cell.cellState == 1){num+=1}))
     num
   }
 
+  /**
+    * the numbers of cells containing a hit boat
+    * @param grid the grid we wznt to check out
+    * @return an int containing the number of cells
+    */
   def boatCellsHit(grid: Grid): Int = {
     var num = 0 ;
     grid.gridLayout.map(line  => line.map( cell => if (cell.cellState == 2){num+=1}))

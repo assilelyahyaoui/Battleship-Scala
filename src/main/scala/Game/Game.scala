@@ -113,8 +113,9 @@ object BattleshipGame extends App {
   }
 
 
-
-  //@tailrec
+  /**
+    * mainloop, creates the game
+    */
   def mainLoop(): Unit = {
 
    chooseGameModePrompt()
@@ -451,7 +452,11 @@ object BattleshipGame extends App {
 
   }
 }
-
+  /**
+    * generates 2 AI players by taking the game mode into consideration
+    * @param AIType int, representing the game mode
+    * @return a playeer of the correct type
+    */
   def AIAIPlayerTypeSetup(AIType : Int ): (Player,Player) = {
     AIType match {
       case 2 => { // medium
@@ -471,6 +476,14 @@ object BattleshipGame extends App {
     }
   }
 
+  /**
+    * gives the statistics (number of wins per players) of a game between 2 AI for a given number of rounds
+    * @param gameState a gamestate = the two players
+    * @param numRounds numbers of rounds the AI have to play
+    * @param scoreP1 the score of the first AI , is 0 at the beginning
+    * @param scoreP2 the score of the second AI , is 0 at the beginning
+    * @return the name of the winner after all the rounds
+    */
   def gameStats(gameState: GameState, numRounds : Int, scoreP1 : Int, scoreP2 : Int):String = {
 
     if (numRounds>0){
@@ -490,14 +503,5 @@ object BattleshipGame extends App {
       score
     }
   }
-  /*def chooseAILevel(): Player = {
-    chooseAIPrompt()
-    val level = readIntFromConsole()
-    level match {
-      //case 2 => new AIPlayer()
-      //case 3 =>
-      case _ => new LowAIPlayer()
-    }
-  }*/
 
 }

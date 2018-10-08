@@ -1,7 +1,7 @@
+import org.scalatest._
 import Boats._
 import Grid._
 import Player._
-import org.scalatest._
 
 
 class HumanPlayerTest extends FunSuite with DiagrammedAssertions {
