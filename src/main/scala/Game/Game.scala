@@ -17,109 +17,13 @@ case class GameState(
 
 object BattleshipGame extends App {
 
-  def chooseGameModePrompt() = {
-    println("Player Mode : " + "\n" +
-      " - Type 1 for Human-Human interaction " + "\n" +
-      " - Type 2 for AI-Human interaction  " + "\n" +
-      " - Type 3 for AI-AI interaction "+ "\n" +
-      " - Type 4 for AI-AI stats ")
-
-  }
-
-  def chooseAIPrompt() = {
-    println("AI mode : type 1 , 2 or 3 to define the level of your AI")
-    println("AI Mode : " + "\n" +
-      " - Type 1 for low level AI  " + "\n" +
-      " - Type 2 for medium level AI " + "\n" +
-      " - Type 3 for high level AI ")
-
-  }
-  def chooseAIvsAIPrompt() = {
-    println("AI mode : type 1 , 2 or 3 to choose the battle")
-    println("AI Mode : " + "\n" +
-      " - Type 1 for low level AI vs medium level AI  " + "\n" +
-      " - Type 2 for low level AI vs high level AI  " + "\n" +
-      " - Type 3 for medium level AI vs high level" + "\n" )
-
-  }
-
-  def chooseNamePrompt(num: Int) = {
-    println("Player" + num + ", Select Your Name")
-  }
-
-  def placeBoatsPrompt(name : String)= {
-    println("Start placing your boats " + name)
-  }
-
-  def placeSpecificBoatPrompt(boatName : String , boatLength : Int): Unit ={
-    println("Place your " + boatName + " Which Length is "+ boatLength)
-  }
-
-  def invalidInput(): Unit ={
-    println("This input is invalid, please try again")
-  }
-
-  def impossiblePlacement() = {
-    println("It is impossible to place the boat here, please try again")
-  }
-
-  def cellNotInboundPrompt() = {
-    println("the cell chosen is not in the grid , please try again")
-  }
-  def cellisHitPrompt() = {
-    println("You have hit you opponent !")
-  }
-  def cellisEmptyPrompt() = {
-    println("This cell is empty ")
-  }
-
-  def cellPreviouslyHitPrompt() = {
-    println("This cell was previously hit")
-  }
-
-  def readStringFromConsole():String= {
-    readLine.toString.toUpperCase()
-  }
-
-  def readIntFromConsole():Int= {
-    readLine.toInt
-  }
-
-  def startGame()= {
-    println("Let's Start the Game Now ")
-  }
-
-  def playerTurn(name: String)={
-    println(name + " It's Your Turn To Play")
-  }
-
-  def gameOver(name: String): Unit ={
-    println("Game Over "+ "\n"+ name+ " You Win")
-  }
-  def primaryGridPrompt(): Unit ={
-    println(" Here is your primary grid")
-  }
-  def trackingGridPrompt(): Unit ={
-    println(" Here is your tracking grid")
-  }
-
-  def clearScreen(): Unit = {
-    print("\033[H\033[2J")
-  }
-
-  def pressEnterToContinue() = {
-    println("Press Any Key Followed By Enter to Continue")
-    readLine()
-  }
-
-
   /**
     * mainloop, creates the game
     */
   def mainLoop(): Unit = {
 
-   chooseGameModePrompt()
-    val gameModeInput =  readIntFromConsole()
+   Outputs.chooseGameModePrompt()
+    val gameModeInput =  Outputs.readIntFromConsole()
 
     gameModeInput match {
       case 1 => {
@@ -142,8 +46,8 @@ object BattleshipGame extends App {
 
       case 2 => {
         // case AH
-        chooseAIPrompt()
-        val HAIType = readIntFromConsole()
+        Outputs.chooseAIPrompt()
+        val HAIType = Outputs.readIntFromConsole()
         val player1 = playerSetup(1, "h")
         val ai1 = HAIPlayerTypeSetup(HAIType)
         val gameState = GameState(0, player1, ai1)
@@ -154,8 +58,8 @@ object BattleshipGame extends App {
 
       case 3 => {
         // case AA
-        chooseAIvsAIPrompt()
-        val AIAIType = readIntFromConsole()
+        Outputs.chooseAIvsAIPrompt()
+        val AIAIType = Outputs.readIntFromConsole()
         val players = AIAIPlayerTypeSetup(AIAIType)
         val player1 = players._1
         val player2 = players._2
@@ -164,8 +68,8 @@ object BattleshipGame extends App {
 
       }
       case 4 =>{
-        chooseAIvsAIPrompt()
-        val AIAIType = readIntFromConsole()
+        Outputs.chooseAIvsAIPrompt()
+        val AIAIType = Outputs.readIntFromConsole()
         val players = AIAIPlayerTypeSetup(AIAIType)
         val player1 = players._1
         val player2 = players._2
@@ -174,7 +78,7 @@ object BattleshipGame extends App {
       }
 
       case _ => {
-        invalidInput()
+        Outputs.invalidInput()
         mainLoop()
       } //case _
     } // gameModeInput match
@@ -234,7 +138,7 @@ object BattleshipGame extends App {
     if (shipList.nonEmpty) {
 
       val currentShip = shipList.head
-      placeSpecificBoatPrompt(currentShip.name, currentShip.length)
+      Outputs.placeSpecificBoatPrompt(currentShip.name, currentShip.length)
       val x = chooseAndValidateX
       val y = chooseAndValidateY
       // take the cell that the player want to hit from the grid
@@ -263,13 +167,13 @@ object BattleshipGame extends App {
 
         }
         else {
-          impossiblePlacement()
+          Outputs.impossiblePlacement()
           placeFleet(grid, shipList, fleet , chooseAndValidateX, chooseAndValidateY, chooseDirection)
         }
 
       }
       else {
-        cellNotInboundPrompt()
+        Outputs.cellNotInboundPrompt()
         placeFleet(grid, shipList, fleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
       }
 
@@ -296,13 +200,13 @@ object BattleshipGame extends App {
     // make modifications to the tracking grid and to the other player hit list
     // dont forget to sopy the grids to the players and to the game
 
-    playerTurn(player1.playerName)
+    Outputs.playerTurn(player1.playerName)
 
     //pressEnterToContinue()
-    clearScreen()
-    primaryGridPrompt()
+    Outputs.clearScreen()
+    Outputs.primaryGridPrompt()
     println(Grid.displayGrid(player1.primaryGrid))
-    trackingGridPrompt()
+    Outputs.trackingGridPrompt()
     println(Grid.displayGrid(player1.trackingGrid))
 
     val hit = player1.chooseHit
@@ -315,7 +219,7 @@ object BattleshipGame extends App {
     state match {
       case 0 => {
         // cell empty prompt
-        cellisEmptyPrompt()
+        Outputs.cellisEmptyPrompt()
         // put on tracking grid of player one, white peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 3)
         println(Grid.displayGrid(newTrackingGrid))
@@ -337,7 +241,7 @@ object BattleshipGame extends App {
       }
       case 1 => {
         // cell is hit
-        cellisHitPrompt()
+        Outputs.cellisHitPrompt()
         // put on tracking grid of player one, red peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 2)
         println(Grid.displayGrid(newTrackingGrid))
@@ -361,7 +265,7 @@ object BattleshipGame extends App {
       }
       case _ => {
         // cell previously hit
-        cellPreviouslyHitPrompt()
+        Outputs.cellPreviouslyHitPrompt()
         val p1Cell = player1.changesAfterCellHit(x, y,2)
 
         (p1Cell, player2)
@@ -376,8 +280,8 @@ object BattleshipGame extends App {
     * @return the setuped player
     */
   def playerSetup(playerNum: Int, playerType : String) : Player ={
-    chooseNamePrompt(playerNum)
-    val playerName = readStringFromConsole()
+    Outputs.chooseNamePrompt(playerNum)
+    val playerName = Outputs.readStringFromConsole()
 
     val player = newPlayerWithType( playerType , playerName)
     // val player = newPlayerWithType()
@@ -387,7 +291,7 @@ object BattleshipGame extends App {
     val grid = Grid(primaryGrid, listCell)
 
 
-    placeBoatsPrompt(playerName)
+    Outputs.placeBoatsPrompt(playerName)
     val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
 
     newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
@@ -418,10 +322,10 @@ object BattleshipGame extends App {
     }
     else {
       turn match {
-        case 1 => {gameOver(gameState.player2.playerName)
+        case 1 => {Outputs.gameOver(gameState.player2.playerName)
                     gameState.player2}
         case 2 => {
-          gameOver(gameState.player1.playerName)
+          Outputs.gameOver(gameState.player1.playerName)
           gameState.player1
         }
 
