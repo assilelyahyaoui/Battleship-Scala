@@ -165,18 +165,21 @@ object Grid {
     * @return a List of Strings
     */
   def displayGrid(grid: Grid)= {
-    grid.gridLayout.map( line => line.map(
-          cell =>
+    grid.gridLayout.map( line => {
+      "|"+
+      line.map(
+
+        cell =>
             "|"+(cell.cellState match{
-              case 0 =>  Console.BLUE_B+" "+Console.INVISIBLE
-              case 1 =>  Console.YELLOW_B+" "+Console.INVISIBLE
-              case 2 =>  Console.RED_B+" "+Console.INVISIBLE
-              case 3 =>  Console.WHITE+" "+Console.INVISIBLE
+              case 0 => print("|"+ Console.BLUE_B+ Console.BLACK + " " + Console.RESET+"|")
+              case 1 => print("|"+Console.YELLOW_B + Console.BLACK + " " + Console.RESET+"|")
+              case 2 => print("|"+ Console.RED_B+ Console.BLACK + " " + Console.RESET+"|")
+              case 3 => print("|"+Console.WHITE+ Console.BLACK + " " + Console.RESET+"|")
 
-            })+ "|"
-      ) +"\n"+ "   "
+            })
+
       )
-
+      println()})
   }
 
   /**

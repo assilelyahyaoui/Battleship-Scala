@@ -186,7 +186,7 @@ object BattleshipGame extends App {
           // adding boat to player fleet
           val finalBoatList = finalShip :: fleet.fleet
           val finalFleet = fleet.copy(finalBoatList , fleet.numberOfBoatsLeft +1)
-          println(Grid.displayGrid(grid2))
+          Grid.displayGrid(grid2)
           //println(Grid.boatCellsLeft(grid2))
           placeFleet(grid2, shipList.tail, finalFleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
@@ -230,9 +230,9 @@ object BattleshipGame extends App {
     //pressEnterToContinue()
     Outputs.clearScreen()
     Outputs.primaryGridPrompt()
-    println(Grid.displayGrid(player1.primaryGrid))
+    Grid.displayGrid(player1.primaryGrid)
     Outputs.trackingGridPrompt()
-    println(Grid.displayGrid(player1.trackingGrid))
+    Grid.displayGrid(player1.trackingGrid)
 
     val hit = player1.chooseHit
     val x = hit._1
@@ -247,7 +247,7 @@ object BattleshipGame extends App {
         Outputs.cellisEmptyPrompt()
         // put on tracking grid of player one, white peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 3)
-        println(Grid.displayGrid(newTrackingGrid))
+        Grid.displayGrid(newTrackingGrid)
 
 
         // put on primary grid of player two , white peg
@@ -269,7 +269,7 @@ object BattleshipGame extends App {
         Outputs.cellisHitPrompt()
         // put on tracking grid of player one, red peg
         val newTrackingGrid = Grid.changeGridCellState(player1.trackingGrid, x, y, 2)
-        println(Grid.displayGrid(newTrackingGrid))
+        Grid.displayGrid(newTrackingGrid)
 
         // put on primary grid of player two , red peg
         val newPrimaryGrid = Grid.changeGridCellState(player2.primaryGrid, x, y, 2)
