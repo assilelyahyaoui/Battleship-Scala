@@ -68,13 +68,6 @@ object Outputs {
     println("This cell was previously hit")
   }
 
-  def readStringFromConsole(): String = {
-    readLine.toString.toUpperCase()
-  }
-
-  def readIntFromConsole(): Int = {
-    readLine.toInt
-  }
 
   def startGame() = {
     println("Let's Start the Game Now ")
@@ -103,6 +96,15 @@ object Outputs {
   def pressEnterToContinue() = {
     println("Press Any Key Followed By Enter to Continue")
     readLine()
+  }
+
+
+  def readStringFromConsole(): String = {
+    readLine.toString.toUpperCase()
+  }
+
+  def readIntFromConsole(): Int = {
+    readLine.toInt
   }
 
 

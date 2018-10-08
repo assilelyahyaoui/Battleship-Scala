@@ -87,7 +87,7 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
      }
    }
    else {
-      (hitList.tail.head._1, hitList.tail.head._2)
+      (hitList.head._1, hitList.head._2)
 
    }
   }
@@ -185,8 +185,8 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
 
           }
           case 4 => {
-            if (x - 1 >= 0) {
-              (x + 1, y - 1) :: hitList
+            if (y - 1 >= 0) {
+              (x , y - 1) :: hitList
             }
             else List()
 
