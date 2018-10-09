@@ -2,3 +2,7 @@
 ai_proof\.csv
 
 AIStats
+
+target/
+
+\.idea/

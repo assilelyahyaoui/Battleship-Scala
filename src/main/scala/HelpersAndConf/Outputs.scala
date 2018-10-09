@@ -82,7 +82,7 @@ object Outputs {
   }
 
   def primaryGridPrompt(): Unit = {
-    println(" Here is your primary grid")
+    println(" Here Is Your Primary Grid")
   }
 
   def trackingGridPrompt(): Unit = {
