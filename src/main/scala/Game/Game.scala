@@ -413,7 +413,7 @@ object BattleshipGame extends App {
     if (numRounds>0){
       val winner = gameLoop(gameState, 1 )
 
-      if (winner == gameState.player1){
+      if (winner.playerName == gameState.player1.playerName){
         gameStats(gameState, numRounds-1, scoreP1+1 , scoreP2)
       }
       else{
@@ -422,7 +422,7 @@ object BattleshipGame extends App {
 
     }
     else {
-      val score = gameState.player1.playerName + " ; " + scoreP1 + " ;"  + gameState.player2.playerName + " ; " + scoreP2  +"\n"
+      val score = gameState.player1.playerName + " ; " + scoreP1 + " ; "  + gameState.player2.playerName + " ; " + scoreP2  +"\n"
       score
     }
   }

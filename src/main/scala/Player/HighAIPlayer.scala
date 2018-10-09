@@ -30,103 +30,128 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
 
   /**
     * constructor of this class, can create an instance with only the name of the player
+    *
     * @param playerName
     */
-  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 , List[(Int, Int)](), new Random )}
+  def this(playerName: String) {
+    this(playerName, Grid(List[List[Cell]](), List[Cell]()), Grid(List[List[Cell]](), List[Cell]()), Fleet(List[Ship](), 5), 1, List[(Int, Int)](), new Random)
+  }
+
   /**
     * returns if the player is alive aka has boats left
+    *
     * @return int 1 if alive, 0 if not
     */
   def isAlive: Int = this._isAlive
+
   /**
     * makes a copy of the instance changing its player name
+    *
     * @param playerName
     * @return a new player with the same parameters except for the name
     */
   def copyWithPlayerName(playerName: String): Player = this.copy(_playerName = playerName)
+
   /**
     * makes a copy of the instance changing its primary grid
+    *
     * @param playerName
     * @return a new player with the same parameters except for the primary grid
     */
   def copyWithPrimaryGrid(primaryGrid: Grid): Player = this.copy(_primaryGrid = primaryGrid)
+
   /**
     * makes a copy of the instance changing its tracking grid
+    *
     * @param playerName
     * @return a new player with the same parameters except for the tracking grid
     */
   def copyWithTrackingGrid(trackingGrid: Grid): Player = this.copy(_trackingGrid = trackingGrid) // add to hitList here, parcourila grid and add all instances
   /**
     * makes a copy of the instance changing its  fleet
+    *
     * @param playerName
     * @return a new player with the same parameters except for the fleet
     */
   def copyWithFleet(fleet: Fleet): Player = this.copy(_fleet = fleet)
+
   /**
     * makes a copy of the instance changing its hitList
+    *
     * @param playerName
     * @return a new player with the same parameters except for the hitList
     */
-  def copyWithHitList(hitList: List[(Int, Int)]): Player = this.copy(_hitList = hitList )
+  def copyWithHitList(hitList: List[(Int, Int)]): Player = this.copy(_hitList = hitList)
 
   /**
     * if there is no hitlist :invokes the random method to create a tuple containing X and Y coordinates
     * if hitlist, runs through it
+    *
     * @return an int representing the y coordinate
     */
-  def chooseHit(): (Int,Int) = {
-   if (hitList.isEmpty) {
-     val x = 0 + randInt.nextInt(Config.gridXMax)
-     val y = 0 + randInt.nextInt(Config.gridXMax)
+  def chooseHit(): (Int, Int) = {
+    if (hitList.isEmpty) {
+      val x = 0 + randInt.nextInt(Config.gridXMax)
+      val y = 0 + randInt.nextInt(Config.gridXMax)
 
-     if (Grid.getCellState(trackingGrid, x, y) == 2 || Grid.getCellState(trackingGrid, x, y) == 3) {
-       chooseHit()
-     }
-     else {
-       copyWithHitList((x, y) :: hitList)
-       (x, y)
-     }
-   }
-   else {
+      if (Grid.getCellState(trackingGrid, x, y) == 2 || Grid.getCellState(trackingGrid, x, y) == 3) {
+        chooseHit()
+      }
+      else {
+        copyWithHitList((x, y) :: hitList)
+        (x, y)
+      }
+    }
+    else {
       (hitList.head._1, hitList.head._2)
 
-   }
+    }
   }
+
   /**
     * for the placement of the boats
     * makes the player chose the X coordinate, makes sure that it is inbound to the grid
+    *
     * @return an int representing the x coordinate
     *
     */
   override def chooseAndValidateX: Int = {
-    0+ randInt.nextInt(Config.gridXMax)
+    0 + randInt.nextInt(Config.gridXMax)
   }
+
   /**
     * for the placement of the boat
-    *  makes the player chose the Y coordinate, makes sure that it is inbound to the grid
+    * makes the player chose the Y coordinate, makes sure that it is inbound to the grid
+    *
     * @return an int representing the y coordinate
     */
   override def chooseAndValidateY: Int = {
-    0+ randInt.nextInt(Config.gridYMax)
+    0 + randInt.nextInt(Config.gridYMax)
   }
+
   /**
     * for the placement of the boats
     * makes the player chose the direction, makes sure it is either 0(horizontal ) or 1 (vertical)
+    *
     * @return an int representing the y coordinate
     */
   override def chooseDirection: Int = randInt.nextInt(2)
+
   /**
     * for the game loop
     * makes the player chose the X coordinate, by invoking the chooseHit function, makes sure that it is inbound to the grid
+    *
     * @return an int representing the x coordinate
     */
   override def chooseHitX: Int = {
     val rh = chooseHit()
     rh._1
   }
+
   /**
     * for the game loop
     * makes the player chose the Y coordinate, by invoking the chooseHit function, makes sure that it is inbound to the grid
+    *
     * @return an int representing the Y coordinate
     */
   override def chooseHitY: Int = {
@@ -141,51 +166,53 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
     * @param y the y coordinate of the cell
     * @return a list of tuple containing the cell shot at and the neighboring cells
     */
-  def findSurroundingHitCells(x : Int, y:Int): List[(Int, Int)] ={
+  def findSurroundingHitCells(x: Int, y: Int): List[(Int, Int)] = {
     //move right - down - left - up
-    (x, y)::moveAndHit(x, y, 1) ::: moveAndHit(x, y, 2)::: moveAndHit(x, y, 3)::: moveAndHit(x, y, 4)
+    (x, y) :: moveAndHit(x, y, 1) ::: moveAndHit(x, y, 2) ::: moveAndHit(x, y, 3) ::: moveAndHit(x, y, 4)
 
   }
 
   /**
     * gives the cells that are next the coordinates given in parameter
-    * @param x the x coordinate of the cell
-    * @param y the y coordinate of the cell
+    *
+    * @param x   the x coordinate of the cell
+    * @param y   the y coordinate of the cell
     * @param way the way of the neighboring cell we want. 1 : right - 2:down - 3:left - 4:up
     * @return a list of tuple containing the cell shot at and th neighboring cell
     */
-  def moveAndHit(x : Int , y : Int , way : Int ): List[(Int, Int)] = {
+  def moveAndHit(x: Int, y: Int, way: Int): List[(Int, Int)] = {
     if (Cell.cellInbound(Cell(x, y, 0))) {
 
       if (Grid.getCellState(trackingGrid, x, y) != 2 && Grid.getCellState(trackingGrid, x, y) != 3) {
         way match {
           case 1 => {
-            if (x + 1 < 10) {
+            if (x + 1 < 10 && !verifyIfTuplesIsHit(trackingGrid, (x + 1, y))) {
               (x + 1, y) :: hitList
+
             }
             else List()
 
           }
           case 2 => {
-            if (y + 1 < 10) {
-              (x, y + 1):: hitList
+            if (y + 1 < 10 && !verifyIfTuplesIsHit(trackingGrid, (x, y + 1))) {
+              (x, y + 1) :: hitList
             }
             else List()
 
 
           }
           case 3 => {
-            if (x - 1 >= 0) {
+            if (x - 1 >= 0 && !verifyIfTuplesIsHit(trackingGrid, (x - 1, y))) {
 
-              (x - 1, y):: hitList
+              (x - 1, y) :: hitList
             }
             else List()
 
 
           }
           case 4 => {
-            if (y - 1 >= 0) {
-              (x , y - 1) :: hitList
+            if (y - 1 >= 0 && !verifyIfTuplesIsHit(trackingGrid, (x, y - 1))) {
+              (x, y - 1) :: hitList
             }
             else List()
 
@@ -199,29 +226,51 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
 
   /**
     * makes modifications after a attempt at hitting a cell, if hit: find neighboring cell , else remove the first tuple of the hitList
-    * @param x the x coordinate that was shot at
-    * @param y the y coordinate that was shot at
+    *
+    * @param x   the x coordinate that was shot at
+    * @param y   the y coordinate that was shot at
     * @param hit 0 if the cell is not hit , 1 otherwise
     * @return a modified player, change the hitList
     */
-  override def changesAfterCellHit(x:Int , y:Int, hit: Int): Player = {
-    if (hitList.nonEmpty){
-     // println(this.copyWithHitList( (findSurroundingHitCells(x,y)).tail))
 
-      this.copyWithHitList( hitList.tail)
+  override def changesAfterCellHit(x: Int, y: Int, hit: Int): Player = {
+    if (hitList.nonEmpty) {
+      // println(this.copyWithHitList( (findSurroundingHitCells(x,y)).tail))
 
-    }
-   else {
-    if(hit == 1){
-      this.copyWithHitList((findSurroundingHitCells(x,y)).tail)
+      this.copyWithHitList(hitList.tail)
 
     }
-      else{
-      this
+    else {
+      if (hit == 1) {
+        this.copyWithHitList((findSurroundingHitCells(x, y)).tail)
+
+      }
+      else {
+        this
+      }
     }
-   }
+
+  }
+
+  def verifyIfCellHit(grid: Grid, hitList1: List[(Int, Int)]): List[(Int, Int)] = {
+    if (hitList1.isEmpty) {
+      (0 + randInt.nextInt(Config.gridXMax), 0 + randInt.nextInt(Config.gridYMax)) :: List()
+    }
+    else {
+      if (Grid.getCellState(grid, hitList1.head._1, hitList1.head._2) == 2 || Grid.getCellState(grid, hitList1.head._1, hitList1.head._2) == 3) {
+        if (hitList1.tail.nonEmpty) {
+          verifyIfCellHit(grid, hitList1.tail)
+        }
+        else (0 + randInt.nextInt(Config.gridXMax), 0 + randInt.nextInt(Config.gridYMax)) :: List()
+      }
+      else hitList1
+    }
 
   }
 
 
+  def verifyIfTuplesIsHit(grid: Grid, tuple: (Int, Int)): Boolean = {
+
+    (Grid.getCellState(grid, tuple._1, tuple._2) == 2 || Grid.getCellState(grid, tuple._1, tuple._2) == 3)
+  }
 }
