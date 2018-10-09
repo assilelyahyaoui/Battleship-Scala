@@ -37,7 +37,7 @@ object Outputs {
   }
 
   def placeBoatsPrompt(name: String) = {
-    println("Start placing your boats " + name)
+    println("Start Placing Your Boats " + name)
   }
 
   def placeSpecificBoatPrompt(boatName: String, boatLength: Int): Unit = {
@@ -45,27 +45,27 @@ object Outputs {
   }
 
   def invalidInput(): Unit = {
-    println("This input is invalid, please try again")
+    println("This Input Is Invalid, Please Try Again")
   }
 
   def impossiblePlacement() = {
-    println("It is impossible to place the boat here, please try again")
+    println("It Is Impossible To Place The Boat Here, Please Try Again")
   }
 
   def cellNotInboundPrompt() = {
-    println("the cell chosen is not in the grid , please try again")
+    println("The Cell Chosen Is Not In The Grid , Please Try Again")
   }
 
   def cellisHitPrompt() = {
-    println("You have hit you opponent !")
+    println("You Have Hit Your Opponent !")
   }
 
   def cellisEmptyPrompt() = {
-    println("This cell is empty ")
+    println("This Cell Is Empty ")
   }
 
   def cellPreviouslyHitPrompt() = {
-    println("This cell was previously hit")
+    println("This Cell Was Previously Hit")
   }
 
 
@@ -86,7 +86,7 @@ object Outputs {
   }
 
   def trackingGridPrompt(): Unit = {
-    println(" Here is your tracking grid")
+    println(" Here is Your Tracking Grid")
   }
 
   def clearScreen(): Unit = {
