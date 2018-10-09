@@ -177,7 +177,6 @@ object Grid {
               case 3 => print("|"+Console.WHITE+ Console.BLACK + " " + Console.RESET+"|")
 
             })
-
       )
       println()})
   }

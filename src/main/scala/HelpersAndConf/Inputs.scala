@@ -11,8 +11,15 @@ object Inputs {
   }
 
   def readIntFromConsole(): Int = {
+    try{
+      readLine.toInt
+    } catch {
+      case e: Exception => {
+        Outputs.invalidInput()
+        readIntFromConsole()
+      };
+    }
 
-   readLine.toInt
 
   }
 
