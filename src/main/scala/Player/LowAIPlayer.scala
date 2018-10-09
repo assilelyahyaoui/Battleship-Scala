@@ -17,7 +17,7 @@ import scala.io.StdIn.readLine
   */
 case class LowAIPlayer(private val  _playerName : String, private val  _primaryGrid : Grid,
                        private val  _trackingGrid : Grid, private val _fleet : Fleet,
-                       private val _isAlive : Int, private val _hitList : List[(Int, Int)] ) extends  AIPlayer {
+                       private val _isAlive : Int, private val _hitList : List[(Int, Int)] , private val _randInt : Random) extends AIPlayer {
 
 
   override val playerName: String = _playerName
@@ -25,11 +25,13 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
   override val trackingGrid: Grid = _trackingGrid
   override val fleet: Fleet = _fleet
   override val hitList: List[(Int, Int)] = _hitList
+  val randInt: Random = _randInt
+
   /**
     * constructor of this class, can create an instance with only the name of the player
     * @param playerName
     */
-  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 , List[(Int, Int)]())  }
+  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 , List[(Int, Int)]() , new Random )  }
   /**
     * returns if the player is alive aka has boats left
     * @return int 1 if alive, 0 if not
@@ -72,7 +74,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
     */
   def chooseHit(): (Int,Int) = {
     //hitList = (0+ Random.nextInt(Config.gridXMax), 0+ Random.nextInt(Config.gridYMax))
-    (0+ Random.nextInt(Config.gridXMax) , 0+ Random.nextInt(Config.gridYMax))
+    (0+ randInt.nextInt(Config.gridXMax) , 0+ randInt.nextInt(Config.gridYMax))
   }
 
   /**
@@ -82,7 +84,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
     *
     */
   override def chooseAndValidateX: Int = {
-    0+ Random.nextInt(Config.gridXMax)
+    0+ randInt.nextInt(Config.gridXMax)
   }
 
   /**
@@ -91,7 +93,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
     * @return an int representing the y coordinate
     */
   override def chooseAndValidateY: Int = {
-    0+ Random.nextInt(Config.gridYMax)
+    0+ randInt.nextInt(Config.gridYMax)
   }
 
   /**
@@ -99,7 +101,7 @@ case class LowAIPlayer(private val  _playerName : String, private val  _primaryG
     * makes the player chose the direction, makes sure it is either 0(horizontal ) or 1 (vertical)
     * @return an int representing the y coordinate
     */
-  override def chooseDirection: Int = Random.nextInt(2)
+  override def chooseDirection: Int = randInt.nextInt(2)
 /**
   * for the game loop
   * makes the player chose the X coordinate, by invoking the chooseHit function, makes sure that it is inbound to the grid

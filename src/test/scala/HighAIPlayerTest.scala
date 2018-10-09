@@ -30,11 +30,13 @@ class HighAIPlayerTest extends FunSuite with DiagrammedAssertions  {
   // insert in grid
   val gridBoat = Grid.placeBoatInGrid(grid, ship1)
   val gridBoat22 = Grid.placeBoatInGrid(grid, ship122)
+  val rnd = new scala.util.Random(10)
 
 
-  val player =  HighAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList)
-  val playerHit =  HighAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull)
-  val player22 =  HighAIPlayer("p1" ,gridBoat22 , grid,fleet22, 1, hitList)
+  val player =  HighAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList, rnd)
+  val playerHit =  HighAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull,rnd)
+  val player22 =  HighAIPlayer("p1" ,gridBoat22 , grid,fleet22, 1, hitList, rnd)
+
 
   val dir = player.chooseDirection
   test("Testing the Player class : chooseHit ") {

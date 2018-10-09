@@ -21,9 +21,11 @@ class MediumAIPlayerTest extends FunSuite with DiagrammedAssertions {
 
   // insert in grid
   val gridBoat = Grid.placeBoatInGrid(grid, ship1)
+  val rnd = new scala.util.Random(10)
 
-  val player = new MediumAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList)
-  val playerHit = new MediumAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull)
+
+  val player = new MediumAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList, rnd)
+  val playerHit = new MediumAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull, rnd)
 
 
   test("Testing the Player class : chooseHit ") {

@@ -18,7 +18,7 @@ import scala.io.StdIn.readLine
 
 case class HighAIPlayer(private val  _playerName : String, private val  _primaryGrid : Grid,
                           private val  _trackingGrid : Grid, private val _fleet : Fleet,
-                          private val _isAlive : Int, private val _hitList : List[(Int, Int)] ) extends  AIPlayer {
+                          private val _isAlive : Int, private val _hitList : List[(Int, Int)], private val _randInt : Random ) extends  AIPlayer {
 
 
   override val playerName: String = _playerName
@@ -26,11 +26,13 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
   override val trackingGrid: Grid = _trackingGrid
   override val fleet: Fleet = _fleet
   override val hitList: List[(Int, Int)] = _hitList
+  val randInt: Random = _randInt
+
   /**
     * constructor of this class, can create an instance with only the name of the player
     * @param playerName
     */
-  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 , List[(Int, Int)]())  }
+  def this(playerName : String){this(playerName,Grid(List[List[Cell]](), List[Cell]()) ,Grid(List[List[Cell]](), List[Cell]()) ,Fleet(List[Ship](), 5) , 1 , List[(Int, Int)](), new Random )}
   /**
     * returns if the player is alive aka has boats left
     * @return int 1 if alive, 0 if not
@@ -73,10 +75,9 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
     * @return an int representing the y coordinate
     */
   def chooseHit(): (Int,Int) = {
-    //hitList = (0+ Random.nextInt(Config.gridXMax), 0+ Random.nextInt(Config.gridYMax))
    if (hitList.isEmpty) {
-     val x = 0 + Random.nextInt(Config.gridXMax)
-     val y = 0 + Random.nextInt(Config.gridXMax)
+     val x = 0 + randInt.nextInt(Config.gridXMax)
+     val y = 0 + randInt.nextInt(Config.gridXMax)
 
      if (Grid.getCellState(trackingGrid, x, y) == 2 || Grid.getCellState(trackingGrid, x, y) == 3) {
        chooseHit()
@@ -98,7 +99,7 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
     *
     */
   override def chooseAndValidateX: Int = {
-    0+ Random.nextInt(Config.gridXMax)
+    0+ randInt.nextInt(Config.gridXMax)
   }
   /**
     * for the placement of the boat
@@ -106,21 +107,20 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
     * @return an int representing the y coordinate
     */
   override def chooseAndValidateY: Int = {
-    0+ Random.nextInt(Config.gridYMax)
+    0+ randInt.nextInt(Config.gridYMax)
   }
   /**
     * for the placement of the boats
     * makes the player chose the direction, makes sure it is either 0(horizontal ) or 1 (vertical)
     * @return an int representing the y coordinate
     */
-  override def chooseDirection: Int = Random.nextInt(2)
+  override def chooseDirection: Int = randInt.nextInt(2)
   /**
     * for the game loop
     * makes the player chose the X coordinate, by invoking the chooseHit function, makes sure that it is inbound to the grid
     * @return an int representing the x coordinate
     */
   override def chooseHitX: Int = {
-    //val rh = randomHit(hitList.last._1, hitList.last._2)
     val rh = chooseHit()
     rh._1
   }
@@ -130,7 +130,6 @@ case class HighAIPlayer(private val  _playerName : String, private val  _primary
     * @return an int representing the Y coordinate
     */
   override def chooseHitY: Int = {
-    // val rh = randomHit(hitList.last._1, hitList.last._2)
     val rh = chooseHit()
     rh._1
   }

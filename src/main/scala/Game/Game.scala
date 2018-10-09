@@ -130,11 +130,13 @@ object BattleshipGame extends App {
 
 
   def newPlayerWithTypeAndGrid(playerType : String, playerName : String, grid: Grid , grid2 : Grid, fleet: Fleet , isAlive : Int): Player={
+    val rand = new scala.util.Random(0)
+    //val randInt = rand.nextInt(Config.gridXMax)
     playerType match {
       case "h" => new HumanPlayer(playerName, grid , grid2 , fleet, isAlive)
-      case "mai" => new MediumAIPlayer("MediumAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
-      case "hai" => new HighAIPlayer("HighAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
-      case _ => new LowAIPlayer("BeginnerAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case "mai" => new MediumAIPlayer("MediumAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)](), rand)
+      case "hai" => new HighAIPlayer("HighAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)](), rand)
+      case _ => new LowAIPlayer("BeginnerAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)](), rand)
 
     }
   }
@@ -207,13 +209,6 @@ object BattleshipGame extends App {
     * @return the players in the same order
     */
   def hit(player1: Player, player2: Player): (Player , Player) = {
-    // need to update the gamestate from the function above
-
-    // player chooses the cell he wants to hit
-    // check the state
-    // returns the state
-    // make modifications to the tracking grid and to the other player hit list
-    // dont forget to sopy the grids to the players and to the game
 
     Outputs.playerTurn(player1.playerName)
 

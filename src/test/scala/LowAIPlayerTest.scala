@@ -19,9 +19,10 @@ class LowAIPlayerTest extends FunSuite with DiagrammedAssertions {
   val hitList = List()
   val hitListFull = List((3,3), (4,3), (3,4),(2,3),(3,2) )
   val gridBoat = Grid.placeBoatInGrid(grid, ship1)
+  val rnd = new scala.util.Random(10)
 
-  val player = new LowAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList)
-  val playerHit = new LowAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull)
+  val player = new LowAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitList, rnd)
+  val playerHit = new LowAIPlayer("p1" ,gridBoat , grid,fleet, 1, hitListFull, rnd)
 
 
   test("Testing the Player class : chooseHit ") {
