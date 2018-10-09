@@ -6,6 +6,6 @@ object Config {
   val gridXMax = 10
   val gridYMax = 10
   val numRoundsOfTest = 100
-  
+
 }
 

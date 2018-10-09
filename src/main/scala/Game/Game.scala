@@ -83,20 +83,22 @@ object BattleshipGame extends App {
         val player1 = players._1
         val player2 = players._2
         val gameState = GameState(0, player1, player2)
-        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState, Config.numRoundsOfTest, 0, 0) )
+        val inputFile = gameStats(gameState, Config.numRoundsOfTest, 0, 0) +"\n"
 
-        val players2 = AIAIPlayerTypeSetup(2) //TODO CHANGE TO 2
+        val players2 = AIAIPlayerTypeSetup(2)
         val player12 = players2._1
         val player22 = players2._2
         val gameState2 = GameState(0, player12, player22)
-        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState2, Config.numRoundsOfTest, 0, 0) )
+        val inputFile2 = inputFile + gameStats(gameState2, Config.numRoundsOfTest, 0, 0) + "\n"
 
 
-        val players3 = AIAIPlayerTypeSetup(3) // TODO CHANGE TO 3
+        val players3 = AIAIPlayerTypeSetup(3)
         val player13 = players3._1
         val player23 = players3._2
         val gameState3 = GameState(0, player13, player23)
-        Outputs.writeToFile("./ai_proof.csv",gameStats(gameState3, Config.numRoundsOfTest, 0, 0) )
+        val inputFile3 = inputFile2 + gameStats(gameState3, Config.numRoundsOfTest, 0, 0)
+
+        Outputs.writeToFile("./ai_proof.csv", inputFile3 )
 
 
       }
