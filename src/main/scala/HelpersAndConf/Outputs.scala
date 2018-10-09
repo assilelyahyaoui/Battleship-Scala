@@ -99,15 +99,6 @@ object Outputs {
   }
 
 
-  def readStringFromConsole(): String = {
-    readLine.toString.toUpperCase()
-  }
-
-  def readIntFromConsole(): Int = {
-    readLine.toInt
-  }
-
-
   /**
     * Function that write into a file the content put as parameters
     * @param location: String: name and location of the file on the computer

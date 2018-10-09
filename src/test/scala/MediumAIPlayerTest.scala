@@ -42,11 +42,11 @@ class MediumAIPlayerTest extends FunSuite with DiagrammedAssertions {
     assert(player.chooseAndValidateX != -1)
     assert(player.chooseAndValidateX.isInstanceOf[Int])
   }
-
+  val dir = player.chooseDirection
   test("Testing the Player class : chooseDirection ") {
     assert(player.chooseDirection != 3)
     assert(player.chooseDirection != -1)
-    assert(player.chooseDirection == 1 || player.chooseDirection == 0)
+    assert(dir == 1 || dir== 0)
     assert(player.chooseDirection.isInstanceOf[Int])
   }
 

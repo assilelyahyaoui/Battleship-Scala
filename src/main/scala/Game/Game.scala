@@ -25,7 +25,7 @@ object BattleshipGame extends App {
   def mainLoop(): Unit = {
 
    Outputs.chooseGameModePrompt()
-    val gameModeInput =  Outputs.readIntFromConsole()
+    val gameModeInput =  Inputs.readIntFromConsole()
 
     gameModeInput match {
       case 1 => {
@@ -49,7 +49,7 @@ object BattleshipGame extends App {
       case 2 => {
         // case AH
         Outputs.chooseAIPrompt()
-        val HAIType = Outputs.readIntFromConsole()
+        val HAIType = Inputs.readIntFromConsole()
         val player1 = playerSetup(1, "h")
         val ai1 = HAIPlayerTypeSetup(HAIType)
         val gameState = GameState(0, player1, ai1)
@@ -61,7 +61,7 @@ object BattleshipGame extends App {
       case 3 => {
         // case AA
         Outputs.chooseAIvsAIPrompt()
-        val AIAIType = Outputs.readIntFromConsole()
+        val AIAIType = Inputs.readIntFromConsole()
         val players = AIAIPlayerTypeSetup(AIAIType)
         val player1 = players._1
         val player2 = players._2
@@ -71,12 +71,11 @@ object BattleshipGame extends App {
       }
       case 4 =>{
         Outputs.chooseAIvsAIPrompt()
-        val AIAIType = Outputs.readIntFromConsole()
+        val AIAIType = Inputs.readIntFromConsole()
         val players = AIAIPlayerTypeSetup(AIAIType)
         val player1 = players._1
         val player2 = players._2
         val gameState = GameState(0, player1, player2)
-        println(gameStats(gameState, Config.numRoundsOfTest, 0, 0))
         Outputs.writeToFile("./ai_proof.csv",gameStats(gameState, Config.numRoundsOfTest, 0, 0) )
       }
       case 5 =>{
@@ -86,14 +85,14 @@ object BattleshipGame extends App {
         val gameState = GameState(0, player1, player2)
         Outputs.writeToFile("./ai_proof.csv",gameStats(gameState, Config.numRoundsOfTest, 0, 0) )
 
-        val players2 = AIAIPlayerTypeSetup(1) //TODO CHANGE TO 2
+        val players2 = AIAIPlayerTypeSetup(2) //TODO CHANGE TO 2
         val player12 = players2._1
         val player22 = players2._2
         val gameState2 = GameState(0, player12, player22)
         Outputs.writeToFile("./ai_proof.csv",gameStats(gameState2, Config.numRoundsOfTest, 0, 0) )
 
 
-        val players3 = AIAIPlayerTypeSetup(1) // TODO CHANGE TO 3
+        val players3 = AIAIPlayerTypeSetup(3) // TODO CHANGE TO 3
         val player13 = players3._1
         val player23 = players3._2
         val gameState3 = GameState(0, player13, player23)
@@ -111,15 +110,7 @@ object BattleshipGame extends App {
 
   }
   mainLoop()
- /*val grid = Grid( Grid.createEmptyGrid(0), List())
-  val grid2 = Grid( Grid.createEmptyGrid(0), List())
-  val fleet = new Fleet(List[Ship](), 1)
 
-  val player = new LowAIPlayer("low", grid, grid2, fleet, 1 , List[(Int, Int)]())
-  println(player.randomHit(1,1))
-  println(player.chooseDirection)
-
-*/
 
   /**
     * return a subtype of player , initialiwed with a name
@@ -130,9 +121,9 @@ object BattleshipGame extends App {
   def newPlayerWithType(playerType : String, playerName : String): Player={
     playerType match {
       case "h" => new HumanPlayer(playerName)
-      case "mai" => new MediumAIPlayer(playerName)
-      case "hai" => new HighAIPlayer(playerName)
-      case _ => new LowAIPlayer(playerName)
+      case "mai" => new MediumAIPlayer("MediumAIPlayer")
+      case "hai" => new HighAIPlayer(" HighAIPlayer")
+      case _ => new LowAIPlayer("BeginnerAIPlayer")
 
     }
   }
@@ -141,9 +132,9 @@ object BattleshipGame extends App {
   def newPlayerWithTypeAndGrid(playerType : String, playerName : String, grid: Grid , grid2 : Grid, fleet: Fleet , isAlive : Int): Player={
     playerType match {
       case "h" => new HumanPlayer(playerName, grid , grid2 , fleet, isAlive)
-      case "mai" => new MediumAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
-      case "hai" => new HighAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
-      case _ => new LowAIPlayer(playerName , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case "mai" => new MediumAIPlayer("MediumAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case "hai" => new HighAIPlayer("HighAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
+      case _ => new LowAIPlayer("BeginnerAIPlayer" , grid, grid2, fleet, isAlive, List[(Int, Int)]())
 
     }
   }
@@ -187,7 +178,6 @@ object BattleshipGame extends App {
           val finalBoatList = finalShip :: fleet.fleet
           val finalFleet = fleet.copy(finalBoatList , fleet.numberOfBoatsLeft +1)
           Grid.displayGrid(grid2)
-          //println(Grid.boatCellsLeft(grid2))
           placeFleet(grid2, shipList.tail, finalFleet,chooseAndValidateX, chooseAndValidateY, chooseDirection)
 
         }
@@ -227,7 +217,7 @@ object BattleshipGame extends App {
 
     Outputs.playerTurn(player1.playerName)
 
-    //pressEnterToContinue()
+    Outputs.pressEnterToContinue()
     Outputs.clearScreen()
     Outputs.primaryGridPrompt()
     Grid.displayGrid(player1.primaryGrid)
@@ -302,25 +292,32 @@ object BattleshipGame extends App {
   /**
     * setups a  player , aka give a name, a primarygrid, an empty tracking grid, a fleet and a state equal to alive
     * @param playerNum
+    * @param playerType
     * @return the setuped player
     */
   def playerSetup(playerNum: Int, playerType : String) : Player ={
-    Outputs.chooseNamePrompt(playerNum)
-    val playerName = Outputs.readStringFromConsole()
+    if (playerType == "h") {
+      Outputs.chooseNamePrompt(playerNum)
+      var playerName = Inputs.readStringFromConsole()
+      val player = newPlayerWithType(playerType, playerName)
+      val primaryGrid = Grid.createEmptyGrid(0)
+      val listCell = List[Cell]()
+      val grid = Grid(primaryGrid, listCell)
+      Outputs.placeBoatsPrompt(playerName)
+      val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
+      newPlayerWithTypeAndGrid(playerType, playerName, gridFleet._1, grid, gridFleet._2, 1)
+    }
+    else {
+      var playerName = " "
+      val player = newPlayerWithType(playerType, playerName)
+      val primaryGrid = Grid.createEmptyGrid(0)
+      val listCell = List[Cell]()
+      val grid = Grid(primaryGrid, listCell)
+      Outputs.placeBoatsPrompt(playerName)
+      val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
+      newPlayerWithTypeAndGrid(playerType, playerName, gridFleet._1, grid, gridFleet._2, 1)
 
-    val player = newPlayerWithType( playerType , playerName)
-    // val player = newPlayerWithType()
-    // setting up the grid
-    val primaryGrid = Grid.createEmptyGrid(0)
-    val listCell= List[Cell]()
-    val grid = Grid(primaryGrid, listCell)
-
-
-    Outputs.placeBoatsPrompt(playerName)
-    val gridFleet = placeFleet(grid, HelpersAndConf.Config.ShipList, Fleet(List[Ship](), 5), player.chooseAndValidateX, player.chooseAndValidateY, player.chooseDirection)
-
-    newPlayerWithTypeAndGrid(playerType , playerName, gridFleet._1 , grid, gridFleet._2 , 1 )
-
+    }
   }
 
   /**
@@ -417,7 +414,6 @@ object BattleshipGame extends App {
 
     if (numRounds>0){
       val winner = gameLoop(gameState, 1 )
-      println(winner)
 
       if (winner == gameState.player1){
         gameStats(gameState, numRounds-1, scoreP1+1 , scoreP2)
