@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b98ed36-0235-45ed-b144-154a0d99ca1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Game/Game.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/HighAIPlayer.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/HighAIPlayerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HighAIPlayerTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/HighAIPlayer$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/HighAIPlayerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/LowAIPlayerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/test-classes/MediumAIPlayerTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -64,18 +51,18 @@
         <counts>
           <entry key="AIStats" value="1" />
           <entry key="class" value="5" />
-          <entry key="csv" value="1" />
+          <entry key="csv" value="2" />
           <entry key="java" value="1" />
           <entry key="sbt" value="1" />
-          <entry key="scala" value="123" />
+          <entry key="scala" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="JAVA" value="1" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Scala" value="123" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Scala" value="127" />
           <entry key="sbt" value="1" />
         </counts>
       </usages-collector>
@@ -83,13 +70,13 @@
         <counts>
           <entry key="java" value="10" />
           <entry key="sbt" value="67" />
-          <entry key="scala" value="28537" />
+          <entry key="scala" value="28560" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="10" />
-          <entry key="Scala" value="28537" />
+          <entry key="Scala" value="28560" />
           <entry key="sbt" value="67" />
         </counts>
       </usages-collector>
@@ -101,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-224">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="165">
+              <caret line="214" column="34" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
               </folding>
@@ -110,14 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/GridTest.scala">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ai_proof.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -134,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/HighAIPlayerTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-72">
@@ -142,6 +126,36 @@
               <folding>
                 <element signature="e#1#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="29" selection-start-line="15" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Outputs.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="95" column="26" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="26" />
+              <folding>
+                <element signature="e#23#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Inputs.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -171,18 +185,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#15#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -190,15 +192,6 @@
               <folding>
                 <element signature="e#16#30#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="33" column="189" selection-start-line="33" selection-start-column="189" selection-end-line="33" selection-end-column="189" />
             </state>
           </provider>
         </entry>
@@ -224,7 +217,6 @@
       <find>lele</find>
       <find>chooseAn</find>
       <find>choosehit</find>
-      <find>pressEnterToContinue</find>
       <find>chooseHi</find>
       <find>hit</find>
       <find>HIT</find>
@@ -245,6 +237,7 @@
       <find>playerTurn</find>
       <find>newPlayerWithType</find>
       <find>random</find>
+      <find>pressEnterToContinue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -275,7 +268,6 @@
         <option value="$PROJECT_DIR$/src/main/scala/HelpersAndConf/Inputs.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/GridTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/AIPlayer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Game/Game.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/HighAIPlayer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/LowAIPlayer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Player/MediumAIPlayer.scala" />
@@ -283,6 +275,7 @@
         <option value="$PROJECT_DIR$/src/test/scala/LowAIPlayerTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/MediumAIPlayerTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/HighAIPlayerTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Game/Game.scala" />
       </list>
     </option>
   </component>
@@ -387,7 +380,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539058798805" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539059249219" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -640,8 +633,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -650,7 +644,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5144578" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.46746987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32650602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -783,13 +777,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>263</line>
+          <line>264</line>
           <properties />
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>265</line>
+          <line>266</line>
           <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
@@ -831,7 +825,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/Game/Game.scala</url>
-          <line>333</line>
+          <line>334</line>
           <properties />
           <option name="timeStamp" value="130" />
         </line-breakpoint>
@@ -961,43 +955,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Inputs.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/HumanPlayerTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ai_proof.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="29" selection-start-line="15" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Outputs.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-          <folding>
-            <element signature="e#23#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1018,16 +981,6 @@
           <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1106,6 +1059,47 @@
           <folding>
             <element signature="e#1#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Outputs.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="95" column="26" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="26" />
+          <folding>
+            <element signature="e#23#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Inputs.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpersAndConf/Config.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="29" selection-start-line="15" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Game/Game.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="214" column="34" selection-start-line="214" selection-start-column="34" selection-end-line="214" selection-end-column="34" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ai_proof.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

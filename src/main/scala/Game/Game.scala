@@ -211,8 +211,9 @@ object BattleshipGame extends App {
   def hit(player1: Player, player2: Player): (Player , Player) = {
 
     Outputs.playerTurn(player1.playerName)
-
+    if (player1.isInstanceOf[HumanPlayer]){
     Outputs.pressEnterToContinue()
+    }
     Outputs.clearScreen()
     Outputs.primaryGridPrompt()
     Grid.displayGrid(player1.primaryGrid)
